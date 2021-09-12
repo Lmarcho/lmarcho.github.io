@@ -82,7 +82,7 @@ p {
 }
 #header .header {
 	min-height: 8vh;
-	background-color: rgba(31, 30, 30, 0.24);
+	background-color: rgb(122,19,123,0.4);
 	transition: 0.3s ease background-color;
 }
 #header .nav-bar {
@@ -258,7 +258,7 @@ p {
 	top: 0;
 	height: 100%;
 	width: 100%;
-	background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+	background-image: linear-gradient(60deg, #0a2647 0%, #2a7610 100%);
 	opacity: 0.9;
 	z-index: -1;
 }
@@ -313,7 +313,7 @@ p {
 	align-items: flex-start;
 	justify-content: center;
 	flex-direction: column;
-	background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+	background-image: linear-gradient(60deg, #10274f 0%, #070a0e 100%);
 	color: white;
 }
 #projects .project-info h1 {
@@ -341,7 +341,7 @@ p {
 	top: 0;
 	height: 100%;
 	width: 100%;
-	background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+	background-image: linear-gradient(60deg, #000000 100%, #364d66 100%);
 	opacity: 0.7;
 }
 #projects .project-img img {
@@ -450,7 +450,7 @@ p {
 
 /* Footer */
 #footer {
-	background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+	background-image: linear-gradient(60deg, #29323c 0%, #450231 100%);
 }
 #footer .footer {
 	min-height: 200px;
