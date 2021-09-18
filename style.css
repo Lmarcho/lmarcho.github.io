@@ -4,6 +4,31 @@
 	margin: 0;
 	box-sizing: border-box;
 }
+
+#particles-js-ecommerce{
+	position: absolute;
+	width: 100%;
+	height: 100vh;
+	background-size: cover;
+}
+#particles-js-maintenance{
+	position: absolute;
+	width: 100%;
+	height: 100vh;
+	background-size: cover;
+}
+#particles-js-extension{
+	position: absolute;
+	width: 100%;
+	height: 100vh;
+	background-size: cover;
+}
+#particles-js-consult{
+	position: absolute;
+	width: 100%;
+	height: 100vh;
+	background-size: cover;
+}
 html {
 	font-size: 10px;
 	font-family: 'Montserrat', sans-serif;
@@ -142,7 +167,61 @@ p {
 #header .nav-list ul li:hover a {
 	color: crimson;
 }
-
+#header .hamburger {
+	height: 60px;
+	width: 60px;
+	display: inline-block;
+	border: 3px solid white;
+	border-radius: 50%;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 100;
+	cursor: pointer;
+	transform: scale(0.8);
+	margin-right: 20px;
+}
+#header .hamburger:after {
+	position: absolute;
+	content: '';
+	height: 100%;
+	width: 100%;
+	border-radius: 50%;
+	border: 3px solid white;
+	animation: hamburger_puls 1s ease infinite;
+}
+#header .hamburger .bar {
+	height: 2px;
+	width: 30px;
+	position: relative;
+	background-color: white;
+	z-index: -1;
+}
+#header .hamburger .bar::after,
+#header .hamburger .bar::before {
+	content: '';
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	left: 0;
+	background-color: white;
+	transition: 0.3s ease;
+	transition-property: top, bottom;
+}
+#header .hamburger .bar::after {
+	top: 8px;
+}
+#header .hamburger .bar::before {
+	bottom: 8px;
+}
+#header .hamburger.active .bar::before {
+	bottom: 0;
+}
+#header .hamburger.active .bar::after {
+	top: 0;
+}
+/* End Header section */
 
 /* Hero Section */
 #hero {

@@ -23,3 +23,17 @@ menu_item.forEach((item) => {
 		mobile_menu.classList.toggle('active');
 	});
 });
+
+
+particlesJS.load('particles-js-ecommerce', 'particles.json', function() {
+	console.log('callback - particles.js config loaded');
+});
+particlesJS.load('particles-js-maintenance', 'particles.json', function() {
+	console.log('callback - particles.js config loaded');
+});
+particlesJS.load('particles-js-extension', 'particles.json', function() {
+	console.log('callback - particles.js config loaded');
+});
+particlesJS.load('particles-js-consult', 'particles.json', function() {
+	console.log('callback - particles.js config loaded');
+});
