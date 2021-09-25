@@ -352,7 +352,7 @@ p {
 	top: 0;
 	height: 100%;
 	width: 100%;
-	background-image: linear-gradient(60deg, #0a2647 0%, #2a7610 100%);
+	background-image: linear-gradient(60deg, #000000 0%, #22577A 100%);
 	opacity: 0.9;
 	z-index: -1;
 }
@@ -545,7 +545,7 @@ p {
 
 /* Footer */
 #footer {
-	background-image: linear-gradient(60deg, #29323c 0%, #450231 100%);
+	background-image: linear-gradient(60deg, #29323c 0%, #283E56 100%);
 }
 #footer .footer {
 	min-height: 200px;
