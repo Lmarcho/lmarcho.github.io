@@ -323,6 +323,33 @@ p {
 	animation-delay: 2.5s;
 }
 
+@media only screen and (max-width: 425px) {
+	.brand h1 {
+		font-size: 1.5rem;
+	}
+
+	#hero h1:nth-child(1) {
+		font-size: 22px;
+	}
+
+	#hero h1:nth-child(2) {
+		font-size: 38px;
+	}
+
+	#hero h1:nth-child(3) {
+		font-size: 21px;
+	}
+
+	.cta {
+		font-size: 1.6rem;
+		padding: 8px 20px;
+	}
+
+	#hero .hero {
+		padding: 0 20px;
+	}
+}
+
 
 /* End Hero Section */
 
