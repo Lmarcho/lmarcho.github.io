@@ -2,19 +2,45 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>L Marcho</title>
+    <meta name="description" content="Lakshitha - Magento Full Stack Developer Portfolio" />
+    <meta name="author" content="Lakshitha" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Lakshitha | Magento Developer Portfolio" />
+    <meta property="og:description" content="Senior Magento 2 Full Stack Developer - Project Portfolio" />
+    <meta property="og:image" content="https://lmarcho.com/img/cover.webp" />
+    <meta property="og:url" content="https://lmarcho.com" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Preconnect Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+    <!-- Critical Hero Styles -->
+    <style>
+        #hero {
+            background-image: url('./img/cover.webp');
+            background-size: cover;
+            background-position: center;
+            /*min-height: 100vh;*/
+            position: relative;
+        }
+    </style>
 </head>
 
 <body>
-<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
 
-<!-- Header -->
-<section id="header">
+<header id="header" aria-label="Main Navigation">
     <div class="header container">
         <div class="nav-bar">
             <div class="brand">
@@ -22,370 +48,265 @@
                     <h1><span>L</span>Marcho</h1>
                 </a>
             </div>
-            <div class="nav-list">
+            <nav class="nav-list" aria-label="Main menu">
                 <div class="hamburger">
                     <div class="bar"></div>
                 </div>
                 <ul>
                     <li><a href="#hero" data-after="Home">Home</a></li>
-<!--                    <li><a href="#services" data-after="Service">Services</a></li>-->
                     <li><a href="#projects" data-after="Projects">Projects</a></li>
                     <li><a href="#about" data-after="About">About</a></li>
                     <li><a href="#contact" data-after="Contact">Contact</a></li>
-<!--                                        <li> <img src="img/moon.png" id="icon"></li>-->
                 </ul>
-
-
-            </div>
+            </nav>
         </div>
     </div>
-</section>
-<!-- End Header -->
+</header>
 
-
-<!-- Hero Section  -->
-<section id="hero">
-    <div id="particles-js-cover"></div>
-    <div class="hero container">
-        <div>
-            <h1>Hi, I'm<span></span></h1>
-            <h1>Lakshitha,<span></span></h1>
-            <h1>Magento Full Stack Developer <span></span></h1>
-            <a href="#projects" type="button" class="cta">Portfolio</a>
-        </div>
-    </div>
-</section>
-<!-- End Hero Section  -->
-
-<!-- Service Section -->
-<!--<section id="services">-->
-<!--    <div class="services container">-->
-<!--        <div class="service-top">-->
-<!--            <h1 class="section-title">Serv<span>i</span>ces</h1>-->
-<!--            <p>I develop softwares with best user experience with nice looking, user friendly, fast and reliable.-->
-<!--                Furthermore, not only the interface but the software we build is according to the w3c standards and-->
-<!--                google guideline so your web application will be preferred by search engines. Going deeper our code are-->
-<!--                matching to the industry standards therefore the software we build is maintainable and extendable easily-->
-<!--                for future requirement.</p>-->
-<!--        </div>-->
-<!--        <div class="service-bottom">-->
-<!--            <div class="service-item">-->
-<!--                <div id="particles-js-ecommerce"></div>-->
-<!--                <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/services.png" alt=""/></div>-->
-<!--                <h2>E-Commerce Web Application Build</h2>-->
-<!--                <p>For a successful business, nowadays the most important and profitable way is using a web application-->
-<!--                    for your products.</p>-->
-<!--                <br>-->
-<!--                <p>-->
-<!--                    We will be working closely with your internal team and when required thorough training will be-->
-<!--                    provided for them to familiarize with system functionality Also we will provide any documentation-->
-<!--                    needed to operate the system with client’s request.-->
-<!--                </p>-->
-<!--            </div>-->
-<!--            <div class="service-item">-->
-<!--                <div id="particles-js-maintenance"></div>-->
-<!--                <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/services.png" alt=""/></div>-->
-<!--                <h2>Maintenance</h2>-->
-<!--                <p>We are delivering a wide range of maintenance services. we are with you, in Planned Maintenance-->
-<!--                    supporting an array of online businesses.</p>-->
-<!--                <p>Continuous monitoring of your site is very important. Any live breakdown can not only cost you a-->
-<!--                    considerable sum but the reputation of your brand too. With advanced tools, we will be able to-->
-<!--                    monitor your site 24/7 and attend to fix any major breakdown as soon as it happens. </p>-->
-<!--            </div>-->
-<!--            <div class="service-item">-->
-<!--                <div id="particles-js-extension"></div>-->
-<!--                <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/services.png" alt=""/></div>-->
-<!--                <h2>Extension Development</h2>-->
-<!--                <p>Our extension development services help to add valuable features and functionality to your web-->
-<!--                    application. We provide to you best extensions, which you cannot take from the internet.</p>-->
-<!--                <br>-->
-<!--                <p>-->
-<!--                    provides you with all Magento web development support, and also we provide you with extensions-->
-<!--                    development services. We provide fair prices with high-quality output. You will be satisfied to work-->
-<!--                    with us.-->
-<!--                </p>-->
-<!--            </div>-->
-<!--            <div class="service-item">-->
-<!--                <div id="particles-js-consult"></div>-->
-<!--                <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/services.png" alt=""/></div>-->
-<!--                <h2>Consultancy</h2>-->
-<!--                <p>I have a team of experienced web design consultants who provide web design consulting services to-->
-<!--                    their clients worldwide.</p>-->
-<!--                <br>-->
-<!--                <p>-->
-<!--                    Our Consultants are working with great commitment to giving the best possible experience for our-->
-<!--                    clients. Your website is a necessary part of your vision, identification and communication strategy.-->
-<!--                    Your clients connect with you more easily and friendlily. We provide you effective services in-->
-<!--                    maintaining not only your clients and but also the business.-->
-<!--                </p>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</section>-->
-<!-- End Service Section -->
-
-<!-- Projects Section -->
-<section id="projects">
-    <div id="particles-js-projects"></div>
-    <div class="projects container">
-        <div class="projects-header">
-            <h1 class="section-title">Recent <span>Projects</span></h1>
-        </div>
-        <div class="all-projects">
-            <div class="project-item">
-                <div class="project-info">
-                    <h1>Nomin</h1>
-                    <p>
-                        Developed an E-Commerce website using Magento 2.4 and Frontend with reactJS using
-                        PWA technology. Was involved as a full stack developer with NeoSolax group.
-                    </p>
-                    <p>
-                        Technologies - PHP, Magento PWA, React JS, Graphql, AWS
-                    </p>
-                    <p>
-                        <a href="https://eshop.nomin.mn/" type="button" class="cta">Nomin</a>
-                    </p>
-                </div>
-                <div class="project-img">
-                    <img src="./img/nomin.png" alt="img">
-                </div>
-            </div>
-            <div class="project-item">
-                <div class="project-info">
-                    <h1>J20 Sports</h1>
-                    <p> • Designed and developed a complete Magento 2.4-based eCommerce website for an international sportswear brand.
-                        Implemented custom themes, checkout flows, and performance optimizations. Worked as a full-stack developer
-                        with NeoSolax group.
-                    </p>
-                    <p>
-                        Technologies - Magento 2.4 PHP, MYSQL, Knockout JS, LESS, AWS
-                    </p>
-                    <p>
-                        <a href="https://j20sports.com/" type="button" class="cta">j20 Sports</a>
-                    </p>
-                </div>
-                <div class="project-img">
-                    <img src="./img/j20.png" alt="img">
-                </div>
-            </div>
-            <div class="project-item">
-                <div class="project-info">
-                    <h1>Arienti</h1>
-                    <p> • Maintenance of an E-Commerce website of Magento 2 platform. Was involved as a full stack
-                        developer with NeoSolax group.
-                    </p>
-                    <p>
-                        Technologies - Magneto 2.2, PHP, MYSQL, Knockout JS, LESS, AWS
-                    </p>
-                    <p>
-                        <a href="https://arienti.lk/" type="button" class="cta">Arienti</a>
-                    </p>
-                </div>
-                <div class="project-img">
-                    <img src="./img/arienti.png" alt="img">
-                </div>
-            </div>
-            <div class="project-item">
-                <div class="project-info">
-                    <h1>Chihuly</h1>
-                    <p> • Maintenance of an E-Commerce website of Magento 2 platform Was involved as a full stack
-                        developer with NeoSolax group.
-                    </p>
-                    <p>
-                        Technologies - Magneto 2.4, PHP, MYSQL, Knockout JS, LESS, AWS
-                    </p>
-                    <p>
-                        <a href="https://chihuly.com/" type="button" class="cta">Chihuly</a>
-                    </p>
-                </div>
-                <div class="project-img">
-                    <img src="./img/chihuly.png" alt="img">
-                </div>
-            </div>
-            <div class="project-item">
-                <div class="project-info">
-                    <h1>Bonz</h1>
-                    <p> • Maintenance of an E-commerce website of Magento 2 platform. Was involved as a full stack
-                        developer with NeoSolax group.
-                    </p>
-                    <p>
-                        Technologies - Magento 2.3, PHP, MYSQL, Knockout JS, LESS, Alibaba Cloud
-                    </p>
-                    <p>
-                        <a href="https://bonz.com/" type="button" class="cta">Bonz</a>
-                    </p>
-                </div>
-                <div class="project-img">
-                    <img src="./img/bonz.png" alt="img">
-                </div>
-            </div>
-            <div class="project-item">
-                <div class="project-info">
-                    <h1>Airport Home Appliances</h1>
-                    <p>
-                        Led the development and scaling of a high-traffic Magento 2.4 eCommerce website for a major appliance retailer in the US.
-                    </p>
-                    <p>
-                        Technologies – Magento 2.4, PHP 8.2, MySQL, Redis, Elasticsearch, AWS
-                    </p>
-                    <p>
-                        <a href="https://www.airportappliance.com/" type="button" class="cta">Airport Appliances</a>
-                    </p>
-                </div>
-                <div class="project-img">
-                    <img src="./img/airport.png" alt="img">
-                </div>
-            </div>
-
-            <div class="project-item">
-                <div class="project-info">
-                    <h1>Buyabans</h1>
-                    <p>
-                        Designed, developed, and deployed the complete Magento 2-based eCommerce platform from the ground up for a leading Sri Lankan electronics brand.
-                    </p>
-                    <p>
-                        Technologies – Magento 2, PHP, MySQL, Redis, Varnish, AWS, Knockout JS
-                    </p>
-                    <p>
-                        <a href="https://www.buyabans.com/" type="button" class="cta">Buyabans</a>
-                    </p>
-                </div>
-                <div class="project-img">
-                    <img src="./img/buyabans.png" alt="img">
-                </div>
-            </div>
-
-            <div class="project-item">
-                <div class="project-info">
-                    <h1>Kiddoz</h1>
-                    <p>
-                        Developed and maintained this Magento 2 store specialized in baby and kids' products. Implemented custom modules and homepage carousels.
-                    </p>
-                    <p>
-                        Technologies – Magento 2, PHP, Redis, Varnish, Knockout JS
-                    </p>
-                    <p>
-                        <a href="https://kiddoz.lk/" type="button" class="cta">Kiddoz</a>
-                    </p>
-                </div>
-                <div class="project-img">
-                    <img src="./img/kiddoz.jpeg" alt="img">
-                </div>
-            </div>
-
-            <div class="project-item">
-                <div class="project-info">
-                    <h1>KDG Cars</h1>
-                    <p>
-                        Built a PWA-enabled Magento 2 website for a luxury vehicle brand, featuring blazing-fast React-based frontend with enhanced filtering, booking, and SEO.
-                    </p>
-                    <p>
-                        Technologies – Magento 2, PWA Studio, ReactJS, GraphQL, Elasticsearch
-                    </p>
-                    <p>
-                        <a href="https://kdgbotswana.com/" type="button" class="cta">KDG Cars</a>
-                    </p>
-                </div>
-                <div class="project-img">
-                    <img src="./img/kdgcars.jpeg" alt="img">
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-<!-- End Projects Section -->
-
-<!-- About Section -->
-<section id="about">
-    <div id="particles-js-about"></div>
-    <div class="about container">
-        <div class="col-left">
-            <div class="about-img">
-                <img src="./img/file.png" alt="img">
+<main>
+    <section id="hero">
+        <div id="particles-js-cover"></div>
+        <div class="hero container">
+            <div>
+                <h1>Hi, I'm<span></span></h1>
+                <h1>Lakshitha,<span></span></h1>
+                <h1>Magento Full Stack Developer <span></span></h1>
+                <a href="#projects" type="button" class="cta">Portfolio</a>
             </div>
         </div>
-        <div class="col-right">
-            <h1 class="section-title">About <span>me</span></h1>
-            <h2>Full Stack Developer</h2>
-            <p>I’m a Senior Software Engineer with over 5 years of experience in building and scaling eCommerce platforms,
-                primarily using Magento 2, PHP (LEMP stack), and Python (Flask). My expertise includes custom module development, ERP integrations
-                and performance optimizations using tools like Redis, Varnish, Elasticsearch, and RabbitMQ.
-                I’ve led teams on high-traffic projects, architected cloud-based solutions on AWS, and delivered secure, scalable,
-                and maintainable systems that enhance user experience and business performance.<br>
-                👉 You can download my resume below for more details about my work and experience.</p>
-            <a href="Lakshitha_Resume.pdf" class="cta" download="Lakshitha_Resume.pdf">Download Resume</a>
-        </div>
-    </div>
-</section>
-<!-- End About Section -->
+    </section>
 
-<!-- Contact Section -->
-<section id="contact">
-    <div id="particles-js-consult"></div>
-    <div class="contact container">
-        <div id="contact-info">
-            <h1 class="section-title">Contact <span>info</span></h1>
-        </div>
-        <div class="contact-items">
-            <div class="contact-item">
-                <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/phone.png" alt=""/></div>
-                <div class="contact-info">
-                    <h1>Phone</h1>
-                    <h2>+94 71 969 0981</h2>
-                    <h2>+94 76 125 1679 </h2>
-                </div>
+    <section id="projects">
+        <div id="particles-js-projects"></div>
+        <div class="projects container">
+            <div class="projects-header">
+                <h1 class="section-title">Recent <span>Projects</span></h1>
             </div>
-            <div class="contact-item">
-                <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/new-post.png" alt=""/></div>
-                <div class="contact-info">
-                    <h1>Email</h1>
-                    <h2>lmathngadeera@gmail.com</h2>
+            <div class="all-projects">
+                <div class="project-item">
+                    <div class="project-info">
+                        <h1>Nomin</h1>
+                        <p>Developed an E-Commerce website using Magento 2.4 and Frontend with ReactJS using PWA technology.</p>
+                        <p>Technologies - PHP, Magento PWA, React JS, GraphQL, AWS</p>
+                        <p><a href="https://eshop.nomin.mn/" class="cta">Nomin</a></p>
+                    </div>
+                    <div class="project-img">
+                        <img src="./img/nomin.webp" alt="Nomin Project" loading="lazy" width="400" height="300" />
+                    </div>
                 </div>
-            </div>
-            <div class="contact-item">
-                <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/map-marker.png" alt=""/></div>
-                <div class="contact-info">
-                    <h1>Address</h1>
-                    <h2>Moratuwa, Colombo,</h2>
-                    <h2>Sri Lanka</h2>
+
+                <div class="project-item">
+                    <div class="project-info">
+                        <h1>J20 Sports</h1>
+                        <p> • Designed and developed a complete Magento 2.4-based eCommerce website for an international sportswear brand.
+                            Implemented custom themes, checkout flows, and performance optimizations. Worked as a full-stack developer
+                            with NeoSolax group.
+                        </p>
+                        <p>
+                            Technologies - Magento 2.4 PHP, MYSQL, Knockout JS, LESS, AWS
+                        </p>
+                        <p>
+                            <a href="https://j20sports.com/" type="button" class="cta">j20 Sports</a>
+                        </p>
+                    </div>
+                    <div class="project-img">
+                        <img src="./img/j20.webp" alt="img">
+                    </div>
+                </div>
+                <div class="project-item">
+                    <div class="project-info">
+                        <h1>Arienti</h1>
+                        <p> • Maintenance of an E-Commerce website of Magento 2 platform. Was involved as a full stack
+                            developer with NeoSolax group.
+                        </p>
+                        <p>
+                            Technologies - Magneto 2.2, PHP, MYSQL, Knockout JS, LESS, AWS
+                        </p>
+                        <p>
+                            <a href="https://arienti.lk/" type="button" class="cta">Arienti</a>
+                        </p>
+                    </div>
+                    <div class="project-img">
+                        <img src="./img/arienti.webp" alt="img">
+                    </div>
+                </div>
+                <div class="project-item">
+                    <div class="project-info">
+                        <h1>Chihuly</h1>
+                        <p> • Maintenance of an E-Commerce website of Magento 2 platform Was involved as a full stack
+                            developer with NeoSolax group.
+                        </p>
+                        <p>
+                            Technologies - Magneto 2.4, PHP, MYSQL, Knockout JS, LESS, AWS
+                        </p>
+                        <p>
+                            <a href="https://chihuly.com/" type="button" class="cta">Chihuly</a>
+                        </p>
+                    </div>
+                    <div class="project-img">
+                        <img src="./img/chihuly.webp" alt="img">
+                    </div>
+                </div>
+                <div class="project-item">
+                    <div class="project-info">
+                        <h1>Bonz</h1>
+                        <p> • Maintenance of an E-commerce website of Magento 2 platform. Was involved as a full stack
+                            developer with NeoSolax group.
+                        </p>
+                        <p>
+                            Technologies - Magento 2.3, PHP, MYSQL, Knockout JS, LESS, Alibaba Cloud
+                        </p>
+                        <p>
+                            <a href="https://bonz.com/" type="button" class="cta">Bonz</a>
+                        </p>
+                    </div>
+                    <div class="project-img">
+                        <img src="./img/bonz.webp" alt="img">
+                    </div>
+                </div>
+                <div class="project-item">
+                    <div class="project-info">
+                        <h1>Airport Home Appliances</h1>
+                        <p>
+                            Led the development and scaling of a high-traffic Magento 2.4 eCommerce website for a major appliance retailer in the US.
+                        </p>
+                        <p>
+                            Technologies – Magento 2.4, PHP 8.2, MySQL, Redis, Elasticsearch, AWS
+                        </p>
+                        <p>
+                            <a href="https://www.airportappliance.com/" type="button" class="cta">Airport Appliances</a>
+                        </p>
+                    </div>
+                    <div class="project-img">
+                        <img src="./img/airport.webp" alt="img">
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-info">
+                        <h1>Buyabans</h1>
+                        <p>
+                            Designed, developed, and deployed the complete Magento 2-based eCommerce platform from the ground up for a leading Sri Lankan electronics brand.
+                        </p>
+                        <p>
+                            Technologies – Magento 2, PHP, MySQL, Redis, Varnish, AWS, Knockout JS
+                        </p>
+                        <p>
+                            <a href="https://www.buyabans.com/" type="button" class="cta">Buyabans</a>
+                        </p>
+                    </div>
+                    <div class="project-img">
+                        <img src="./img/buyabans.webp" alt="img">
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-info">
+                        <h1>Kiddoz</h1>
+                        <p>
+                            Developed and maintained this Magento 2 store specialized in baby and kids' products. Implemented custom modules and homepage carousels.
+                        </p>
+                        <p>
+                            Technologies – Magento 2, PHP, Redis, Varnish, Knockout JS
+                        </p>
+                        <p>
+                            <a href="https://kiddoz.lk/" type="button" class="cta">Kiddoz</a>
+                        </p>
+                    </div>
+                    <div class="project-img">
+                        <img src="./img/kiddoz.webp" alt="img">
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-info">
+                        <h1>KDG Cars</h1>
+                        <p>
+                            Built a PWA-enabled Magento 2 website for a luxury vehicle brand, featuring blazing-fast React-based frontend with enhanced filtering, booking, and SEO.
+                        </p>
+                        <p>
+                            Technologies – Magento 2, PWA Studio, ReactJS, GraphQL, Elasticsearch
+                        </p>
+                        <p>
+                            <a href="https://kdgbotswana.com/" type="button" class="cta">KDG Cars</a>
+                        </p>
+                    </div>
+                    <div class="project-img">
+                        <img src="./img/kdgcars.webp" alt="img">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-<!-- End Contact Section -->
+    </section>
 
-<!-- Footer -->
-<section id="footer">
+    <section id="about">
+        <div id="particles-js-about"></div>
+        <div class="about container">
+            <div class="col-left">
+                <div class="about-img">
+                    <img src="./img/file.webp" alt="Lakshitha Profile Image" loading="lazy" width="250" height="360" />
+                </div>
+            </div>
+            <div class="col-right">
+                <h1 class="section-title">About <span>me</span></h1>
+                <h2>Full Stack Developer</h2>
+                <p>I’m a Senior Software Engineer with over 5 years of experience in building and scaling eCommerce platforms using Magento 2 and Flask.</p>
+                <a href="Lakshitha_Resume.pdf" class="cta" download="Lakshitha_Resume.pdf">Download Resume</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div id="particles-js-consult"></div>
+        <div class="contact container">
+            <div id="contact-info">
+                <h1 class="section-title">Contact <span>info</span></h1>
+            </div>
+            <div class="contact-items">
+                <div class="contact-item">
+                    <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/phone.png" alt="Phone Icon" /></div>
+                    <div class="contact-info">
+                        <h1>Phone</h1>
+                        <h2>+94 71 969 0981</h2>
+                        <h2>+94 76 125 1679</h2>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/new-post.png" alt="Email Icon" /></div>
+                    <div class="contact-info">
+                        <h1>Email</h1>
+                        <h2>lmathngadeera@gmail.com</h2>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/map-marker.png" alt="Location Icon" /></div>
+                    <div class="contact-info">
+                        <h1>Address</h1>
+                        <h2>Moratuwa, Colombo, Sri Lanka</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer id="footer">
     <div class="footer container">
         <div class="brand">
             <h1><span>L</span>Marcho</h1>
         </div>
         <h2>Your Complete Web Solution</h2>
         <div class="social-icon">
-            <div class="social-item">
-                <a href="https://www.linkedin.com/in/lmarcho/">
-                    <img src="https://img.icons8.com/bubbles/100/000000/linkedin.png" alt=""/></a>
-            </div>
-            <div class="social-item">
-                <a href="https://join.skype.com/invite/lEALQPjdURLT"><img
-                        src="https://img.icons8.com/bubbles/100/000000/skype.png" alt=""/></a>
-            </div>
-            <div class="social-item">
-                <a href="https://www.facebook.com/lmarchoo/"><img
-                        src="https://img.icons8.com/bubbles/100/000000/facebook-new.png" alt=""/></a>
-            </div>
-            <div class="social-item">
-                <a href="https://www.instagram.com/l_marcho/"><img
-                        src="https://img.icons8.com/bubbles/100/000000/instagram-new.png" alt=""/></a>
-            </div>
+            <div class="social-item"><a href="https://www.linkedin.com/in/lmarcho/"><img src="https://img.icons8.com/bubbles/100/000000/linkedin.png" alt="LinkedIn" /></a></div>
+            <div class="social-item"><a href="https://join.skype.com/invite/lEALQPjdURLT"><img src="https://img.icons8.com/bubbles/100/000000/skype.png" alt="Skype" /></a></div>
+            <div class="social-item"><a href="https://www.facebook.com/lmarchoo/"><img src="https://img.icons8.com/bubbles/100/000000/facebook-new.png" alt="Facebook" /></a></div>
+            <div class="social-item"><a href="https://www.instagram.com/l_marcho/"><img src="https://img.icons8.com/bubbles/100/000000/instagram-new.png" alt="Instagram" /></a></div>
         </div>
         <p>Copyright © 2021 Lmarcho. All rights reserved</p>
     </div>
-</section>
-<!-- End Footer -->
-<script src="./app.js"></script>
+</footer>
+
+<script src="./app.js" defer></script>
 </body>
 
 </html>
