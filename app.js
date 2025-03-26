@@ -41,10 +41,7 @@ particlesJS.load('particles-js-ecommerce', 'particles.json', function() {
 particlesJS.load('particles-js-maintenance', 'particles.json', function() {
 	console.log('callback - particles.js config loaded');
 });
-particlesJS.load('particles-js-extension1', 'particles.json', function() {
-	console.log('callback - particles.js config loaded');
-});
-particlesJS.load('particles-js-extension2', 'particles.json', function() {
+particlesJS.load('particles-js-extension', 'particles.json', function() {
 	console.log('callback - particles.js config loaded');
 });
 particlesJS.load('particles-js-consult', 'particles.json', function() {
