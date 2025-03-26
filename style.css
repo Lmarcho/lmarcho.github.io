@@ -26,17 +26,27 @@ body{
 	height: 100vh;
 	background-size: cover;
 }
-#particles-js-maintenance{
+/*#particles-js-about{*/
+/*	position: absolute;*/
+/*	width: 100%;*/
+/*	height: 100vh;*/
+/*	background-size: cover;*/
+/*}*/
+/*#particles-js-projects{*/
+/*	position: absolute;*/
+/*	width: 100%;*/
+/*	height: 100vh;*/
+/*	background-size: cover;*/
+/*}*/
+#particles-js-projects,
+#particles-js-about {
 	position: absolute;
+	inset: 0;
 	width: 100%;
-	height: 100vh;
+	height: 100%;
 	background-size: cover;
-}
-#particles-js-extension{
-	position: absolute;
-	width: 100%;
-	height: 100vh;
-	background-size: cover;
+	z-index: 0;
+	pointer-events: none;
 }
 #particles-js-consult{
 	position: absolute;
@@ -647,6 +657,11 @@ p {
 	/* End Services Section */
 
 	/* Project */
+	#projects,
+	#about {
+		position: relative;
+		z-index: 1;
+	}
 	#projects .project-item {
 		flex-direction: row;
 	}

@@ -38,10 +38,10 @@ menu_item.forEach((item) => {
 particlesJS.load('particles-js-ecommerce', 'particles.json', function() {
 	console.log('callback - particles.js config loaded');
 });
-particlesJS.load('particles-js-maintenance', 'particles.json', function() {
+particlesJS.load('particles-js-about', 'particles.json', function() {
 	console.log('callback - particles.js config loaded');
 });
-particlesJS.load('particles-js-extension', 'particles.json', function() {
+particlesJS.load('particles-js-projects', 'particles.json', function() {
 	console.log('callback - particles.js config loaded');
 });
 particlesJS.load('particles-js-consult', 'particles.json', function() {
