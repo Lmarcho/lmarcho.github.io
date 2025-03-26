@@ -44,6 +44,12 @@ body{
 	height: 100vh;
 	background-size: cover;
 }
+#particles-js-cover{
+	position: absolute;
+	width: 100%;
+	height: 100vh;
+	background-size: cover;
+}
 html {
 	font-size: 10px;
 	font-family: cursive;
@@ -53,7 +59,7 @@ a {
 	text-decoration: none;
 }
 .container {
-	min-height: 100vh;
+	min-height: 60vh;
 	width: 100%;
 	display: flex;
 	align-items: center;
