@@ -12,28 +12,28 @@ const Skills = () => {
 
   const getCategoryColor = (category) => {
     const colors = {
-      'eCommerce': 'from-orange-500 to-red-500',
-      'Backend': 'from-blue-500 to-indigo-500',
-      'Frontend': 'from-green-500 to-teal-500',
-      'Database': 'from-purple-500 to-pink-500',
-      'API': 'from-yellow-500 to-orange-500',
-      'Cloud': 'from-cyan-500 to-blue-500',
-      'Cache': 'from-red-500 to-pink-500',
-      'Search': 'from-indigo-500 to-purple-500',
-      'Tools': 'from-gray-500 to-gray-700',
-      'DevOps': 'from-teal-500 to-green-500',
+      'eCommerce': 'bg-orange-100 text-orange-700 border-orange-300',
+      'Backend': 'bg-blue-100 text-blue-700 border-blue-300',
+      'Frontend': 'bg-green-100 text-green-700 border-green-300',
+      'Database': 'bg-purple-100 text-purple-700 border-purple-300',
+      'API': 'bg-yellow-100 text-yellow-700 border-yellow-300',
+      'Cloud': 'bg-cyan-100 text-cyan-700 border-cyan-300',
+      'Cache': 'bg-red-100 text-red-700 border-red-300',
+      'Search': 'bg-indigo-100 text-indigo-700 border-indigo-300',
+      'Tools': 'bg-gray-100 text-gray-700 border-gray-300',
+      'DevOps': 'bg-teal-100 text-teal-700 border-teal-300',
     };
-    return colors[category] || 'from-gray-500 to-gray-700';
+    return colors[category] || 'bg-gray-100 text-gray-700 border-gray-300';
   };
 
   return (
-    <section id="skills" className="py-20 bg-white">
+    <section id="skills" className="py-16 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Technical <span className="text-magento-orange">Skills</span>
@@ -44,43 +44,31 @@ const Skills = () => {
           </p>
         </motion.div>
 
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           {categories.map((category, categoryIndex) => (
             <motion.div
               key={category}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: categoryIndex * 0.1 }}
-              className="mb-12"
+              transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
+              className="mb-6"
             >
-              <h3 className="text-2xl font-bold text-gray-800 mb-6 flex items-center">
-                <span className={`w-3 h-3 rounded-full bg-gradient-to-r ${getCategoryColor(category)} mr-3`}></span>
+              <h3 className="text-lg font-semibold text-gray-700 mb-3">
                 {category}
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="flex flex-wrap gap-2">
                 {skills
                   .filter(skill => skill.category === category)
                   .map((skill, index) => (
-                    <motion.div
+                    <motion.span
                       key={skill.name}
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={isInView ? { opacity: 1, x: 0 } : {}}
-                      transition={{ duration: 0.5, delay: categoryIndex * 0.1 + index * 0.05 }}
-                      className="bg-gray-50 rounded-lg p-4 hover:shadow-lg transition-shadow duration-300"
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                      transition={{ duration: 0.3, delay: categoryIndex * 0.1 + index * 0.05 }}
+                      className={`px-4 py-2 rounded-full text-sm font-medium border ${getCategoryColor(category)} hover:shadow-md transition-shadow duration-200`}
                     >
-                      <div className="flex justify-between items-center mb-2">
-                        <span className="font-semibold text-gray-800">{skill.name}</span>
-                        <span className="text-sm font-medium text-magento-orange">{skill.level}%</span>
-                      </div>
-                      <div className="w-full bg-gray-200 rounded-full h-2.5 overflow-hidden">
-                        <motion.div
-                          className={`h-2.5 rounded-full bg-gradient-to-r ${getCategoryColor(category)}`}
-                          initial={{ width: 0 }}
-                          animate={isInView ? { width: `${skill.level}%` } : {}}
-                          transition={{ duration: 1, delay: categoryIndex * 0.1 + index * 0.05 + 0.3 }}
-                        />
-                      </div>
-                    </motion.div>
+                      {skill.name}
+                    </motion.span>
                   ))}
               </div>
             </motion.div>
