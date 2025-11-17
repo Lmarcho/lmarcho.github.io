@@ -37,10 +37,10 @@ const Projects = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group bg-gray-800 rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+              className="group bg-gray-800 rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 flex flex-col"
             >
               {/* Image */}
-              <div className="relative overflow-hidden h-64">
+              <div className="relative overflow-hidden h-64 flex-shrink-0">
                 <img
                   src={project.image}
                   alt={project.title}
@@ -56,26 +56,32 @@ const Projects = () => {
               </div>
 
               {/* Content */}
-              <div className="p-6">
+              <div className="p-6 flex flex-col flex-grow">
                 <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-magento-orange transition-colors">
                   {project.title}
                 </h3>
-                <p className="text-gray-300 mb-4 line-clamp-3">
-                  {project.description}
-                </p>
 
-                {/* Technologies */}
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.technologies.slice(0, 4).map((tech, techIndex) => (
+                {/* Description - expands on hover */}
+                <div className="mb-4 overflow-hidden transition-all duration-500">
+                  <p className="text-gray-300 group-hover:line-clamp-none line-clamp-3 transition-all duration-500">
+                    {project.description}
+                  </p>
+                </div>
+
+                {/* Technologies - shows all on hover */}
+                <div className="flex flex-wrap gap-2 mb-4 transition-all duration-500">
+                  {project.technologies.map((tech, techIndex) => (
                     <span
                       key={techIndex}
-                      className="px-3 py-1 bg-gray-700 text-gray-300 text-xs rounded-full"
+                      className={`px-3 py-1 bg-gray-700 text-gray-300 text-xs rounded-full transition-all duration-300 ${
+                        techIndex >= 4 ? 'opacity-0 group-hover:opacity-100 max-h-0 group-hover:max-h-10' : 'opacity-100'
+                      }`}
                     >
                       {tech}
                     </span>
                   ))}
                   {project.technologies.length > 4 && (
-                    <span className="px-3 py-1 bg-gray-700 text-gray-300 text-xs rounded-full">
+                    <span className="px-3 py-1 bg-gray-700 text-gray-300 text-xs rounded-full group-hover:opacity-0 group-hover:max-h-0 transition-all duration-300">
                       +{project.technologies.length - 4} more
                     </span>
                   )}
@@ -86,7 +92,7 @@ const Projects = () => {
                   href={project.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center text-magento-orange hover:text-orange-400 font-semibold transition-colors"
+                  className="inline-flex items-center text-magento-orange hover:text-orange-400 font-semibold transition-colors mt-auto"
                 >
                   View Project
                   <FaExternalLinkAlt className="ml-2 w-4 h-4" />

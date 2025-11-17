@@ -23,6 +23,8 @@ export const portfolioData = {
     // Backend & Frameworks
     { name: "Magento 2", level: 95, category: "eCommerce" },
     { name: "PHP 8.x (LEMP Stack)", level: 92, category: "Backend" },
+    { name: "Node.js", level: 85, category: "Backend" },
+    { name: "NestJS", level: 82, category: "Backend" },
     { name: "Laravel", level: 85, category: "Backend" },
     { name: "Flask", level: 82, category: "Backend" },
     { name: "Django", level: 80, category: "Backend" },
@@ -32,6 +34,9 @@ export const portfolioData = {
     { name: "PWA Studio", level: 82, category: "eCommerce" },
     { name: "Headless Commerce", level: 80, category: "eCommerce" },
     { name: "Microservices & SOA", level: 83, category: "Architecture" },
+    { name: "Serverless Architecture", level: 80, category: "Architecture" },
+    { name: "Event-Driven Architecture (EDA)", level: 82, category: "Architecture" },
+    { name: "Headless & Decoupled Architecture", level: 85, category: "Architecture" },
 
     // Frontend
     { name: "React JS", level: 85, category: "Frontend" },
@@ -39,52 +44,47 @@ export const portfolioData = {
     { name: "Vue.js", level: 78, category: "Frontend" },
     { name: "JavaScript (ES6+)", level: 88, category: "Frontend" },
     { name: "HTML5 & CSS3", level: 90, category: "Frontend" },
+    { name: "Tailwind CSS", level: 88, category: "Frontend" },
     { name: "Knockout JS", level: 85, category: "Frontend" },
     { name: "LESS/SASS", level: 88, category: "Frontend" },
 
-    // Database
-    { name: "MySQL", level: 90, category: "Database" },
-    { name: "PostgreSQL", level: 85, category: "Database" },
-    { name: "MongoDB", level: 82, category: "Database" },
-    { name: "DynamoDB", level: 75, category: "Database" },
+    // API & Database
+    { name: "REST API", level: 88, category: "API & Database" },
+    { name: "GraphQL", level: 82, category: "API & Database" },
+    { name: "Swagger/OpenAPI", level: 80, category: "API & Database" },
+    { name: "MySQL", level: 90, category: "API & Database" },
+    { name: "PostgreSQL", level: 85, category: "API & Database" },
+    { name: "MongoDB", level: 82, category: "API & Database" },
+    { name: "DynamoDB", level: 75, category: "API & Database" },
 
-    // API Development
-    { name: "REST API", level: 88, category: "API" },
-    { name: "GraphQL", level: 82, category: "API" },
-    { name: "Swagger/OpenAPI", level: 80, category: "API" },
-
-    // Performance & Caching
-    { name: "Redis", level: 88, category: "Performance" },
-    { name: "Varnish", level: 85, category: "Performance" },
-    { name: "RabbitMQ", level: 80, category: "Performance" },
-
-    // Search
-    { name: "Elasticsearch", level: 82, category: "Search" },
-    { name: "OpenSearch", level: 80, category: "Search" },
+    // Performance & Search
+    { name: "Redis", level: 88, category: "Performance & Search" },
+    { name: "Varnish", level: 85, category: "Performance & Search" },
+    { name: "RabbitMQ", level: 80, category: "Performance & Search" },
+    { name: "Elasticsearch", level: 82, category: "Performance & Search" },
+    { name: "OpenSearch", level: 80, category: "Performance & Search" },
 
     // Cloud & Hosting
     { name: "AWS (EC2, RDS, S3, Lambda, AWS Autoscaling, Load Balancing)", level: 85, category: "Cloud" },
     { name: "Alibaba Cloud", level: 78, category: "Cloud" },
     { name: "Cloudflare", level: 82, category: "Cloud" },
 
-    // DevOps & Tools
-    { name: "Docker", level: 78, category: "DevOps" },
-    { name: "Kubernetes", level: 72, category: "DevOps" },
-    { name: "Jenkins", level: 75, category: "DevOps" },
-    { name: "GitHub Actions", level: 80, category: "DevOps" },
-    { name: "CI/CD Pipelines", level: 78, category: "DevOps" },
-    { name: "Nginx", level: 85, category: "DevOps" },
-    { name: "Linux Administration", level: 82, category: "DevOps" },
-    { name: "Git & Version Control", level: 92, category: "Tools" },
+    // Tools & DevOps
+    { name: "Git & Version Control", level: 92, category: "Tools & DevOps" },
+    { name: "Docker", level: 78, category: "Tools & DevOps" },
+    { name: "Kubernetes", level: 72, category: "Tools & DevOps" },
+    { name: "Jenkins", level: 75, category: "Tools & DevOps" },
+    { name: "GitHub Actions", level: 80, category: "Tools & DevOps" },
+    { name: "CI/CD Pipelines", level: 78, category: "Tools & DevOps" },
+    { name: "Nginx", level: 85, category: "Tools & DevOps" },
+    { name: "Linux Administration", level: 82, category: "Tools & DevOps" },
 
-    // Testing & Monitoring
-    { name: "PHPUnit & PestPHP", level: 80, category: "Testing" },
-    { name: "Selenium & Cypress", level: 75, category: "Testing" },
-    { name: "New Relic & Blackfire.io", level: 78, category: "Monitoring" },
-
-    // Integration & CMS
-    { name: "ERP Integration", level: 85, category: "Integration" },
-    { name: "Contentful & Strapi", level: 75, category: "Integration" },
+    // Testing, Monitoring & Integration
+    { name: "PHPUnit & PestPHP", level: 80, category: "Testing & Monitoring" },
+    { name: "Selenium & Cypress", level: 75, category: "Testing & Monitoring" },
+    { name: "New Relic & Blackfire.io", level: 78, category: "Testing & Monitoring" },
+    { name: "ERP Integration", level: 85, category: "Testing & Monitoring" },
+    { name: "Contentful & Strapi", level: 75, category: "Testing & Monitoring" },
   ],
 
   projects: [
