@@ -2,8 +2,8 @@ export const portfolioData = {
   personal: {
     name: "Lakshitha",
     title: "Magento Full Stack Developer",
-    tagline: "Your Complete Web Solution",
-    bio: "I'm a Senior Software Engineer with over 5 years of experience in building and scaling eCommerce platforms using Magento 2 and Flask.",
+    tagline: "Building High-Performance eCommerce Solutions",
+    bio: "I'm a Senior Software Engineer with over 5 years of professional experience in eCommerce development, specializing in Magento 2, PHP (LEMP stack), and cloud-native architectures. I lead enterprise-level projects for high-traffic websites with a strong focus on performance, security, and scalability. My expertise includes custom module development, payment gateway integrations, ERP system synchronizations, and performance tuning using Redis, Varnish, RabbitMQ, and Elasticsearch on AWS infrastructure.",
     email: "lmathngadeera@gmail.com",
     phone: ["+94 71 969 0981", "+94 76 125 1679"],
     location: "Moratuwa, Colombo, Sri Lanka",
@@ -21,20 +21,30 @@ export const portfolioData = {
 
   skills: [
     { name: "Magento 2", level: 95, category: "eCommerce" },
-    { name: "PHP 8.x", level: 90, category: "Backend" },
+    { name: "PHP 8.x (LEMP Stack)", level: 92, category: "Backend" },
+    { name: "Custom Module Development", level: 93, category: "eCommerce" },
+    { name: "Payment Gateway Integration", level: 90, category: "eCommerce" },
     { name: "MySQL", level: 90, category: "Database" },
     { name: "React JS", level: 85, category: "Frontend" },
-    { name: "JavaScript", level: 88, category: "Frontend" },
-    { name: "GraphQL", level: 80, category: "API" },
+    { name: "JavaScript (ES6+)", level: 88, category: "Frontend" },
+    { name: "HTML5 & CSS3", level: 90, category: "Frontend" },
+    { name: "GraphQL", level: 82, category: "API" },
+    { name: "REST API", level: 88, category: "API" },
     { name: "PWA Studio", level: 82, category: "eCommerce" },
-    { name: "AWS", level: 78, category: "Cloud" },
-    { name: "Redis", level: 85, category: "Cache" },
-    { name: "Elasticsearch", level: 80, category: "Search" },
+    { name: "Headless Commerce", level: 80, category: "eCommerce" },
+    { name: "AWS", level: 85, category: "Cloud" },
+    { name: "Redis", level: 88, category: "Performance" },
+    { name: "Varnish", level: 85, category: "Performance" },
+    { name: "RabbitMQ", level: 80, category: "Performance" },
+    { name: "Elasticsearch", level: 82, category: "Search" },
+    { name: "ERP Integration", level: 85, category: "Integration" },
+    { name: "Nginx", level: 85, category: "Backend" },
+    { name: "Linux Administration", level: 82, category: "DevOps" },
     { name: "Knockout JS", level: 85, category: "Frontend" },
-    { name: "LESS/CSS", level: 88, category: "Frontend" },
-    { name: "Git", level: 90, category: "Tools" },
-    { name: "Docker", level: 75, category: "DevOps" },
-    { name: "Varnish", level: 78, category: "Cache" },
+    { name: "LESS/SASS", level: 88, category: "Frontend" },
+    { name: "Git & Version Control", level: 92, category: "Tools" },
+    { name: "Docker", level: 78, category: "DevOps" },
+    { name: "CI/CD Pipelines", level: 75, category: "DevOps" },
   ],
 
   projects: [
@@ -124,41 +134,48 @@ export const portfolioData = {
   experience: [
     {
       id: 1,
-      title: "Senior Magento Developer",
-      company: "NeoSolax",
+      title: "Senior Software Engineer - Magento Lead",
+      company: "Leading eCommerce Solutions Provider",
       period: "2020 - Present",
-      description: "Leading development of enterprise-level Magento 2 eCommerce solutions for international clients. Architecting scalable platforms, implementing custom modules, and optimizing performance.",
+      description: "Leading Magento 2 development for high-traffic eCommerce websites with millions of monthly visitors. Responsible for architecture design, performance optimization, team leadership, and cross-functional coordination. Specializing in enterprise-level implementations with complex integrations.",
       achievements: [
-        "Led development of 5+ major Magento 2.4 projects",
-        "Implemented PWA solutions using React and GraphQL",
-        "Improved site performance by 40% through optimization",
-        "Mentored junior developers in Magento best practices"
+        "Led development and scaling of 5+ enterprise Magento 2.4 projects with high-traffic requirements",
+        "Architected and implemented custom ERP integrations for real-time stock and order synchronization",
+        "Achieved 60% performance improvement through Redis, Varnish, RabbitMQ, and Elasticsearch optimization",
+        "Led payment gateway integrations and custom checkout flow implementations",
+        "Managed requirement gathering, sprint planning, and release management across teams",
+        "Implemented headless architecture using PWA Studio, React, and GraphQL",
+        "Mentored junior developers and conducted code reviews ensuring best practices",
+        "Designed and deployed cloud-native solutions on AWS with auto-scaling capabilities"
       ]
     },
     {
       id: 2,
-      title: "Full Stack Developer",
-      company: "eCommerce Solutions",
+      title: "Full Stack Magento Developer",
+      company: "eCommerce Development Agency",
       period: "2018 - 2020",
-      description: "Developed and maintained multiple Magento 2 websites, working on both frontend and backend development.",
+      description: "Full-stack development on LEMP stack (Linux, Nginx, MySQL, PHP) for multiple Magento 2 projects. Handled both backend custom module development and frontend theme customizations.",
       achievements: [
-        "Built 3 complete Magento 2 stores from scratch",
-        "Integrated payment gateways and shipping providers",
-        "Customized themes and checkout processes",
-        "Implemented Redis and Varnish caching"
+        "Built 3 complete Magento 2 stores from scratch with custom themes",
+        "Developed custom payment gateway and shipping method integrations",
+        "Implemented performance optimization using Redis cache and Varnish",
+        "Created responsive themes with HTML5, CSS3, and JavaScript",
+        "Integrated third-party APIs and developed custom REST/SOAP APIs",
+        "Managed deployment pipelines and server configurations"
       ]
     },
     {
       id: 3,
-      title: "Junior Magento Developer",
-      company: "Tech Startup",
+      title: "Magento Developer",
+      company: "Digital Commerce Startup",
       period: "2017 - 2018",
-      description: "Started career in Magento development, learning the platform and contributing to various eCommerce projects.",
+      description: "Started career in Magento development, working on various eCommerce projects and learning enterprise-level development practices.",
       achievements: [
-        "Developed custom Magento 2 modules",
-        "Fixed bugs and improved existing functionality",
-        "Created responsive email templates",
-        "Assisted in deployment and maintenance"
+        "Developed custom Magento 2 modules and extensions",
+        "Fixed critical bugs and improved existing functionality",
+        "Created responsive email templates and frontend components",
+        "Assisted in LEMP stack server setup and maintenance",
+        "Participated in code reviews and agile development processes"
       ]
     }
   ]
