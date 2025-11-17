@@ -35,9 +35,6 @@ menu_item.forEach((item) => {
 // 	}
 // }
 
-particlesJS.load('particles-js-ecommerce', 'particles.json', function() {
-	console.log('callback - particles.js config loaded');
-});
 particlesJS.load('particles-js-about', 'particles.json', function() {
 	console.log('callback - particles.js config loaded');
 });
