@@ -44,6 +44,7 @@ export const portfolioData = {
     { name: "Vue.js", level: 78, category: "Frontend" },
     { name: "JavaScript (ES6+)", level: 88, category: "Frontend" },
     { name: "HTML5 & CSS3", level: 90, category: "Frontend" },
+    { name: "Tailwind CSS", level: 88, category: "Frontend" },
     { name: "Knockout JS", level: 85, category: "Frontend" },
     { name: "LESS/SASS", level: 88, category: "Frontend" },
 
