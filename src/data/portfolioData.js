@@ -63,7 +63,7 @@ export const portfolioData = {
     { name: "OpenSearch", level: 80, category: "Search" },
 
     // Cloud & Hosting
-    { name: "AWS (EC2, RDS, S3, Lambda)", level: 85, category: "Cloud" },
+    { name: "AWS (EC2, RDS, S3, Lambda, AWS Autoscaling, Load Balancing)", level: 85, category: "Cloud" },
     { name: "Alibaba Cloud", level: 78, category: "Cloud" },
     { name: "Cloudflare", level: 82, category: "Cloud" },
 
