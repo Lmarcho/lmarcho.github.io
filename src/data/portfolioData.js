@@ -23,6 +23,8 @@ export const portfolioData = {
     // Backend & Frameworks
     { name: "Magento 2", level: 95, category: "eCommerce" },
     { name: "PHP 8.x (LEMP Stack)", level: 92, category: "Backend" },
+    { name: "Node.js", level: 85, category: "Backend" },
+    { name: "NestJS", level: 82, category: "Backend" },
     { name: "Laravel", level: 85, category: "Backend" },
     { name: "Flask", level: 82, category: "Backend" },
     { name: "Django", level: 80, category: "Backend" },
@@ -32,6 +34,9 @@ export const portfolioData = {
     { name: "PWA Studio", level: 82, category: "eCommerce" },
     { name: "Headless Commerce", level: 80, category: "eCommerce" },
     { name: "Microservices & SOA", level: 83, category: "Architecture" },
+    { name: "Serverless Architecture", level: 80, category: "Architecture" },
+    { name: "Event-Driven Architecture (EDA)", level: 82, category: "Architecture" },
+    { name: "Headless & Decoupled Architecture", level: 85, category: "Architecture" },
 
     // Frontend
     { name: "React JS", level: 85, category: "Frontend" },
