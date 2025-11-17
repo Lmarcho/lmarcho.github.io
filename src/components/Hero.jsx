@@ -18,23 +18,24 @@ const Hero = () => {
     >
       <ParticlesBackground id="hero-particles" />
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-20 pb-10">
+        <div className="text-center max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
+            className="mb-8 sm:mb-10"
           >
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-white mb-4 text-shadow">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light text-white mb-3 sm:mb-4 text-shadow">
               Hi, I'm
             </h2>
-            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 text-shadow-lg">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white leading-tight text-shadow-lg">
               {personal.name}
             </h1>
           </motion.div>
 
           <motion.h2
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-magento-orange mb-8 text-shadow"
+            className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold text-magento-orange mb-10 sm:mb-12 leading-relaxed text-shadow px-4"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}

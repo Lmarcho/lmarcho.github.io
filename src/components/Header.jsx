@@ -29,7 +29,7 @@ const Header = () => {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-magento-gray shadow-lg' : 'bg-transparent'
+        scrolled || isOpen ? 'bg-magento-gray shadow-lg' : 'bg-transparent'
       }`}
     >
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -93,15 +93,15 @@ const Header = () => {
             opacity: isOpen ? 1 : 0,
           }}
           transition={{ duration: 0.3 }}
-          className="md:hidden overflow-hidden"
+          className="md:hidden overflow-hidden bg-magento-gray"
         >
-          <div className="py-4 space-y-3">
+          <div className="py-4 space-y-2 bg-magento-gray border-t border-gray-700">
             {navItems.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
                 onClick={handleNavClick}
-                className="block text-white hover:text-magento-orange transition-colors duration-300 py-2 px-4 text-lg"
+                className="block text-white hover:text-magento-orange hover:bg-gray-800 transition-all duration-300 py-3 px-4 text-lg rounded"
               >
                 {item.name}
               </a>
