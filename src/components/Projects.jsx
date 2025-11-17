@@ -80,6 +80,11 @@ const Projects = () => {
                       {tech}
                     </span>
                   ))}
+                  {project.technologies.length > 4 && (
+                    <span className="px-3 py-1 bg-gray-700 text-gray-300 text-xs rounded-full group-hover:opacity-0 group-hover:max-h-0 transition-all duration-300">
+                      +{project.technologies.length - 4} more
+                    </span>
+                  )}
                 </div>
 
                 {/* View Project Link */}
