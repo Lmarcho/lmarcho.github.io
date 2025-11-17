@@ -15,13 +15,12 @@ const Skills = () => {
       'eCommerce': 'bg-orange-100 text-orange-700 border-orange-300',
       'Backend': 'bg-blue-100 text-blue-700 border-blue-300',
       'Frontend': 'bg-green-100 text-green-700 border-green-300',
-      'Database': 'bg-purple-100 text-purple-700 border-purple-300',
-      'API': 'bg-yellow-100 text-yellow-700 border-yellow-300',
+      'Architecture': 'bg-indigo-100 text-indigo-700 border-indigo-300',
+      'API & Database': 'bg-purple-100 text-purple-700 border-purple-300',
+      'Performance & Search': 'bg-red-100 text-red-700 border-red-300',
       'Cloud': 'bg-cyan-100 text-cyan-700 border-cyan-300',
-      'Cache': 'bg-red-100 text-red-700 border-red-300',
-      'Search': 'bg-indigo-100 text-indigo-700 border-indigo-300',
-      'Tools': 'bg-gray-100 text-gray-700 border-gray-300',
-      'DevOps': 'bg-teal-100 text-teal-700 border-teal-300',
+      'Tools & DevOps': 'bg-teal-100 text-teal-700 border-teal-300',
+      'Testing & Monitoring': 'bg-yellow-100 text-yellow-700 border-yellow-300',
     };
     return colors[category] || 'bg-gray-100 text-gray-700 border-gray-300';
   };
