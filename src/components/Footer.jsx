@@ -17,10 +17,10 @@ const Footer = () => {
           </div>
 
           {/* Tagline */}
-          <p className="text-gray-400 text-lg mb-6">{personal.tagline}</p>
+          <p className="text-gray-400 text-base sm:text-lg mb-8 text-center px-4">{personal.tagline}</p>
 
           {/* Social Links */}
-          <div className="flex space-x-6 mb-8">
+          <div className="flex space-x-6 mb-10">
             <a
               href={social.linkedin}
               target="_blank"
@@ -60,12 +60,16 @@ const Footer = () => {
           </div>
 
           {/* Copyright */}
-          <div className="text-gray-500 text-center">
-            <p className="flex items-center justify-center">
-              Copyright © {currentYear} LMarcho. Made with{' '}
-              <FaHeart className="text-magento-orange mx-1" /> by Lakshitha
+          <div className="text-gray-500 text-center space-y-2">
+            <p className="text-sm sm:text-base">
+              Copyright © {currentYear} LMarcho.
             </p>
-            <p className="mt-2 text-sm">All rights reserved</p>
+            <p className="flex items-center justify-center text-sm sm:text-base flex-wrap gap-1">
+              <span>Made with</span>
+              <FaHeart className="text-magento-orange" />
+              <span>by Lakshitha</span>
+            </p>
+            <p className="text-xs sm:text-sm text-gray-600">All rights reserved</p>
           </div>
         </div>
       </div>
