@@ -45,7 +45,8 @@ const Projects = () => {
                   src={project.image}
                   alt={project.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  loading="lazy"
+                  loading={index < 3 ? "eager" : "lazy"}
+                  decoding="async"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-60"></div>
                 {project.featured && (

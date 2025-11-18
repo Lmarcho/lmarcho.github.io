@@ -40,7 +40,9 @@ const About = () => {
                 src={personal.profileImage}
                 alt={personal.name}
                 className="relative rounded-lg shadow-2xl w-full max-w-sm object-cover"
-                loading="lazy"
+                loading="eager"
+                decoding="async"
+                fetchpriority="high"
               />
             </div>
           </motion.div>

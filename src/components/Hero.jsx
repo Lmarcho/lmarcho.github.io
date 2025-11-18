@@ -13,7 +13,7 @@ const Hero = () => {
         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('${personal.coverImage}')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        backgroundAttachment: 'fixed',
+        backgroundRepeat: 'no-repeat',
       }}
     >
       <ParticlesBackground id="hero-particles" />
