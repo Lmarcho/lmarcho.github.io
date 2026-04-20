@@ -1,78 +1,35 @@
-import { FaLinkedin, FaSkype, FaFacebook, FaInstagram, FaHeart } from 'react-icons/fa';
-import { portfolioData } from '../data/portfolioData';
+import { T, Kbd } from './tokens';
 
 const Footer = () => {
-  const { personal, social } = portfolioData;
-  const currentYear = new Date().getFullYear();
-
   return (
-    <footer className="bg-gray-950 text-white py-12">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col items-center">
-          {/* Brand */}
-          <div className="mb-6">
-            <h2 className="text-3xl font-bold">
-              <span className="text-magento-orange">L</span>Marcho
-            </h2>
-          </div>
-
-          {/* Tagline */}
-          <p className="text-gray-400 text-base sm:text-lg mb-8 text-center px-4">{personal.tagline}</p>
-
-          {/* Social Links */}
-          <div className="flex space-x-6 mb-10">
-            <a
-              href={social.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-magento-orange transition-all duration-300 transform hover:scale-110"
-              aria-label="LinkedIn"
-            >
-              <FaLinkedin className="text-xl" />
-            </a>
-            <a
-              href={social.skype}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-magento-orange transition-all duration-300 transform hover:scale-110"
-              aria-label="Skype"
-            >
-              <FaSkype className="text-xl" />
-            </a>
-            <a
-              href={social.facebook}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-magento-orange transition-all duration-300 transform hover:scale-110"
-              aria-label="Facebook"
-            >
-              <FaFacebook className="text-xl" />
-            </a>
-            <a
-              href={social.instagram}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-magento-orange transition-all duration-300 transform hover:scale-110"
-              aria-label="Instagram"
-            >
-              <FaInstagram className="text-xl" />
-            </a>
-          </div>
-
-          {/* Copyright */}
-          <div className="text-gray-500 text-center space-y-2">
-            <p className="text-sm sm:text-base">
-              Copyright © {currentYear} LMarcho.
-            </p>
-            <p className="flex items-center justify-center text-sm sm:text-base flex-wrap gap-1">
-              <span>Made with</span>
-              <FaHeart className="text-magento-orange" />
-              <span>by Lakshitha</span>
-            </p>
-            <p className="text-xs sm:text-sm text-gray-600">All rights reserved</p>
-          </div>
+    <footer style={{ marginTop: 80, padding: '40px 0 60px', borderTop: `1px solid ${T.line}` }}>
+      <div
+        className="footer-row"
+        style={{
+          display: 'grid',
+          gridTemplateColumns: '1fr auto 1fr',
+          gap: 24,
+          alignItems: 'center',
+          fontFamily: T.mono,
+          fontSize: 11,
+          color: T.dim,
+        }}
+      >
+        <div>© {new Date().getFullYear()} Lakshitha — built, not bought.</div>
+        <div style={{ display: 'flex', gap: 10, justifyContent: 'center', alignItems: 'center' }}>
+          <Kbd>⌘</Kbd>
+          <Kbd>K</Kbd>
+          <span>smooth scroll · no trackers</span>
         </div>
+        <div style={{ textAlign: 'right' }}>Colombo, LK · UTC+5:30</div>
       </div>
+
+      <style>{`
+        @media (max-width: 720px) {
+          .footer-row { grid-template-columns: 1fr !important; text-align: center !important; }
+          .footer-row > div { text-align: center !important; }
+        }
+      `}</style>
     </footer>
   );
 };

@@ -1,114 +1,138 @@
-import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
+import { T, Dot } from './tokens';
+
+const NAV = [
+  ['about', '01'],
+  ['stack', '02'],
+  ['work', '03'],
+  ['case', '04'],
+  ['cv', '05'],
+  ['notes', '06'],
+  ['contact', '07'],
+];
 
 const Header = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [now, setNow] = useState(() => new Date());
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const id = setInterval(() => setNow(new Date()), 1000);
+    return () => clearInterval(id);
   }, []);
 
-  const navItems = [
-    { name: 'Home', href: '#hero' },
-    { name: 'About', href: '#about' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Experience', href: '#experience' },
-    { name: 'Contact', href: '#contact' },
-  ];
-
-  const handleNavClick = () => {
-    setIsOpen(false);
-  };
+  const t = now.toLocaleTimeString('en-GB', {
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    timeZone: 'Asia/Colombo',
+  });
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled || isOpen ? 'bg-magento-gray shadow-lg' : 'bg-transparent'
-      }`}
+      style={{
+        position: 'sticky',
+        top: 0,
+        zIndex: 50,
+        background: 'rgba(10,10,10,0.85)',
+        backdropFilter: 'blur(12px)',
+        WebkitBackdropFilter: 'blur(12px)',
+        borderBottom: `1px solid ${T.line}`,
+      }}
     >
-      <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo */}
-          <motion.a
-            href="#hero"
-            className="text-2xl md:text-3xl font-bold text-white"
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <span className="text-magento-orange">L</span>Marcho
-          </motion.a>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
-            {navItems.map((item, index) => (
-              <motion.a
-                key={item.name}
-                href={item.href}
-                className="text-white hover:text-magento-orange transition-colors duration-300 font-medium"
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                {item.name}
-              </motion.a>
-            ))}
-          </div>
-
-          {/* Hamburger Button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden flex flex-col justify-center items-center w-10 h-10 space-y-1.5 focus:outline-none"
-            aria-label="Toggle menu"
-          >
-            <span
-              className={`block w-6 h-0.5 bg-white transition-transform duration-300 ${
-                isOpen ? 'rotate-45 translate-y-2' : ''
-              }`}
-            />
-            <span
-              className={`block w-6 h-0.5 bg-white transition-opacity duration-300 ${
-                isOpen ? 'opacity-0' : ''
-              }`}
-            />
-            <span
-              className={`block w-6 h-0.5 bg-white transition-transform duration-300 ${
-                isOpen ? '-rotate-45 -translate-y-2' : ''
-              }`}
-            />
-          </button>
+      <div
+        style={{
+          maxWidth: 1320,
+          margin: '0 auto',
+          padding: '10px 24px',
+          display: 'grid',
+          gridTemplateColumns: '1fr auto 1fr',
+          alignItems: 'center',
+          gap: 16,
+          fontFamily: T.mono,
+          fontSize: 11,
+          color: T.mid,
+        }}
+        className="topbar-row"
+      >
+        <div style={{ display: 'flex', gap: 12, alignItems: 'center', flexWrap: 'wrap' }}>
+          <a href="#top" style={{ color: T.white, fontWeight: 600, textDecoration: 'none' }}>~/lmarcho</a>
+          <span style={{ color: T.dim }}>·</span>
+          <span style={{ display: 'inline-flex', alignItems: 'center' }}>
+            <Dot c={T.accent} /> available
+          </span>
         </div>
 
-        {/* Mobile Menu */}
-        <motion.div
-          initial={false}
-          animate={{
-            height: isOpen ? 'auto' : 0,
-            opacity: isOpen ? 1 : 0,
+        <nav className="topbar-nav" style={{ display: 'flex', gap: 18, justifyContent: 'center' }}>
+          {NAV.map(([k, n]) => (
+            <a key={k} href={`#${k}`} style={{ color: T.mid, textDecoration: 'none', display: 'inline-flex', gap: 6 }}>
+              <span style={{ color: T.dim }}>{n}</span>
+              <span>{k}</span>
+            </a>
+          ))}
+        </nav>
+
+        <div style={{ display: 'flex', gap: 12, justifyContent: 'flex-end', alignItems: 'center' }}>
+          <span>{t} <span style={{ color: T.dim }}>LKT</span></span>
+          <button
+            className="topbar-menu"
+            onClick={() => setOpen((o) => !o)}
+            style={{
+              display: 'none',
+              background: 'none',
+              border: `1px solid ${T.line2}`,
+              color: T.mid,
+              fontFamily: T.mono,
+              fontSize: 11,
+              padding: '3px 8px',
+              borderRadius: 3,
+              cursor: 'pointer',
+            }}
+            aria-label="Toggle menu"
+          >
+            {open ? '×' : 'menu'}
+          </button>
+        </div>
+      </div>
+
+      {open && (
+        <div
+          style={{
+            borderTop: `1px solid ${T.line}`,
+            background: T.bg2,
+            padding: '8px 24px 14px',
           }}
-          transition={{ duration: 0.3 }}
-          className="md:hidden overflow-hidden bg-magento-gray"
+          className="topbar-mobilenav"
         >
-          <div className="py-4 space-y-2 bg-magento-gray border-t border-gray-700">
-            {navItems.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                onClick={handleNavClick}
-                className="block text-white hover:text-magento-orange hover:bg-gray-800 transition-all duration-300 py-3 px-4 text-lg rounded"
-              >
-                {item.name}
-              </a>
-            ))}
-          </div>
-        </motion.div>
-      </nav>
+          {NAV.map(([k, n]) => (
+            <a
+              key={k}
+              href={`#${k}`}
+              onClick={() => setOpen(false)}
+              style={{
+                display: 'flex',
+                gap: 12,
+                padding: '10px 4px',
+                color: T.mid,
+                textDecoration: 'none',
+                fontFamily: T.mono,
+                fontSize: 12,
+                borderBottom: `1px dashed ${T.line2}`,
+              }}
+            >
+              <span style={{ color: T.dim }}>{n}</span>
+              <span style={{ color: T.white }}>{k}</span>
+            </a>
+          ))}
+        </div>
+      )}
+
+      <style>{`
+        @media (max-width: 768px) {
+          .topbar-row { grid-template-columns: 1fr auto !important; }
+          .topbar-nav { display: none !important; }
+          .topbar-menu { display: inline-flex !important; }
+        }
+      `}</style>
     </header>
   );
 };

@@ -1,92 +1,194 @@
-import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
-import { useRef } from 'react';
-import ParticlesBackground from './ParticlesBackground';
+import { T, SectionHead } from './tokens';
 import { portfolioData } from '../data/portfolioData';
 
+const PRINCIPLES = [
+  ['Perf-first', 'Ship it fast, or fix it before shipping.'],
+  ['Cache ≠ magic', 'Eviction strategy before you add a layer.'],
+  ['Boring stacks', 'PHP + MySQL + Redis still beats fashion.'],
+  ['AI with grounding', 'RAG with citations beats vibes.'],
+  ['Observability first', "If you can't see it, you can't fix it."],
+  ['Idempotent by default', "Retries shouldn't corrupt your data."],
+  ['Measure, don\u2019t guess', 'Blackfire, New Relic, real users — not vibes.'],
+  ['Ship calm', 'No heroics. No 3am deploys. Boring is good.'],
+];
+
+const STACK_FLUENCY = [
+  ['Python', 'Flask, Django — scripts, APIs, data pipelines, ML glue.'],
+  ['Node.js', 'NestJS for modular backends, Next.js (App Router) on the front.'],
+  ['PHP', 'Magento 2 including Hyvä theme, Laravel, Symfony internals.'],
+  ['Headless & new', 'Payload CMS, PWA Studio, MCP servers for LLMs.'],
+];
+
 const About = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
   const { personal } = portfolioData;
-
   return (
-    <section id="about" className="relative py-20 bg-gray-50 overflow-hidden">
-      <ParticlesBackground id="about-particles" />
+    <section id="about">
+      <SectionHead
+        num="01"
+        title="About"
+        meta="bio · approach"
+        caption="Long-form tab — who I am, how I work, and what I won't compromise on."
+      />
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10" ref={ref}>
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            About <span className="text-magento-orange">Me</span>
-          </h2>
-          <div className="w-24 h-1 bg-magento-orange mx-auto"></div>
-        </motion.div>
-
-        <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-          {/* Image */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex justify-center"
+      <div className="about-grid" style={{ display: 'grid', gridTemplateColumns: '1.3fr 1fr', gap: 48 }}>
+        <div>
+          <p
+            style={{
+              fontFamily: T.sans,
+              fontSize: 19,
+              lineHeight: 1.55,
+              color: T.fg,
+              margin: 0,
+              fontWeight: 400,
+            }}
           >
-            <div className="relative">
-              <div className="absolute inset-0 bg-magento-orange rounded-lg transform rotate-6"></div>
-              <img
-                src={personal.profileImage}
-                alt={personal.name}
-                className="relative rounded-lg shadow-2xl w-full max-w-sm object-cover"
-                loading="eager"
-                decoding="async"
-                fetchpriority="high"
-              />
-            </div>
-          </motion.div>
+            I build and run <strong style={{ color: T.white, fontWeight: 600 }}>platforms that don&rsquo;t fall over</strong> — from high-traffic Magento stores to multi-tenant AI SaaS. Six years in, most of it spent inside big PHP codebases and, lately, wiring LLMs into places they weren&rsquo;t designed for.
+          </p>
+          <p style={{ fontFamily: T.sans, fontSize: 16, lineHeight: 1.65, color: T.mid, marginTop: 20 }}>
+            I like the unglamorous parts: query plans that don&rsquo;t explode, idempotent consumers, ERP sync that actually stays in sync, RAG retrieval that returns the right chunk, observability before incidents. I lead teams by pairing, reviewing, and making the easy thing the right thing.
+          </p>
 
-          {/* Content */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="space-y-6"
+          <div
+            className="principles-grid"
+            style={{ marginTop: 32, display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 18 }}
           >
-            <h3 className="text-3xl font-bold text-gray-900">Full Stack Developer</h3>
-            <p className="text-lg text-gray-700 leading-relaxed">
-              {personal.bio}
-            </p>
+            {PRINCIPLES.map(([h, b]) => (
+              <div key={h} style={{ borderLeft: `1px solid ${T.line2}`, paddingLeft: 14 }}>
+                <div style={{ fontFamily: T.mono, fontSize: 10, color: T.accent, letterSpacing: '0.12em', textTransform: 'uppercase' }}>{h}</div>
+                <div style={{ fontFamily: T.sans, fontSize: 14, color: T.fg, marginTop: 6, lineHeight: 1.5 }}>{b}</div>
+              </div>
+            ))}
+          </div>
 
-            <div className="space-y-3 text-gray-700">
-              <p className="flex items-center">
-                <svg className="w-6 h-6 mr-3 text-magento-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-                {personal.email}
-              </p>
-              <p className="flex items-center">
-                <svg className="w-6 h-6 mr-3 text-magento-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-                {personal.location}
-              </p>
-            </div>
-
-            <motion.a
-              href={personal.resumeUrl}
-              download
-              className="inline-block px-8 py-4 bg-magento-orange text-white font-semibold rounded-lg hover:bg-opacity-90 transform hover:scale-105 transition-all duration-300 shadow-lg"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+          <div style={{ marginTop: 28, border: `1px solid ${T.line}`, borderRadius: 6, background: T.bg2, padding: '18px 20px' }}>
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                marginBottom: 14,
+                fontFamily: T.mono,
+                fontSize: 10,
+                color: T.dim,
+                letterSpacing: '0.15em',
+              }}
             >
-              Download Resume
-            </motion.a>
-          </motion.div>
+              <span>// STACK FLUENCY</span>
+              <span>what I reach for</span>
+            </div>
+            <div
+              className="stack-fluency"
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(2, 1fr)',
+                gap: 16,
+                fontFamily: T.mono,
+                fontSize: 12,
+                lineHeight: 1.6,
+              }}
+            >
+              {STACK_FLUENCY.map(([h, b]) => (
+                <div key={h}>
+                  <div style={{ color: T.accent, fontSize: 11, letterSpacing: '0.08em', textTransform: 'uppercase' }}>{h}</div>
+                  <div style={{ color: T.fg, marginTop: 4 }}>{b}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* ID card */}
+        <div style={{ border: `1px solid ${T.line}`, background: T.bg2, borderRadius: 6, overflow: 'hidden' }}>
+          <div
+            style={{
+              padding: '14px 18px',
+              borderBottom: `1px solid ${T.line}`,
+              fontFamily: T.mono,
+              fontSize: 10,
+              color: T.dim,
+              letterSpacing: '0.15em',
+              display: 'flex',
+              justifyContent: 'space-between',
+            }}
+          >
+            <span>// ID CARD</span>
+            <span>#LM-001</span>
+          </div>
+          <div
+            style={{
+              position: 'relative',
+              aspectRatio: '4/3',
+              overflow: 'hidden',
+              background: `linear-gradient(135deg, ${T.accent} 0%, #0ea5e9 50%, ${T.rust} 100%)`,
+              borderBottom: `1px solid ${T.line}`,
+            }}
+          >
+            <img
+              src={personal.profileImage}
+              alt={personal.name}
+              style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }}
+              onError={(e) => {
+                e.currentTarget.style.display = 'none';
+              }}
+            />
+            <div style={{ position: 'absolute', top: 12, left: 12, width: 20, height: 20, borderTop: `2px solid ${T.accent}`, borderLeft: `2px solid ${T.accent}` }} />
+            <div style={{ position: 'absolute', top: 12, right: 12, width: 20, height: 20, borderTop: `2px solid ${T.accent}`, borderRight: `2px solid ${T.accent}` }} />
+            <div style={{ position: 'absolute', bottom: 12, left: 12, width: 20, height: 20, borderBottom: `2px solid ${T.accent}`, borderLeft: `2px solid ${T.accent}` }} />
+            <div style={{ position: 'absolute', bottom: 12, right: 12, width: 20, height: 20, borderBottom: `2px solid ${T.accent}`, borderRight: `2px solid ${T.accent}` }} />
+            <div
+              style={{
+                position: 'absolute',
+                bottom: 0,
+                left: 0,
+                right: 0,
+                padding: '20px 22px 16px',
+                background: 'linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.85) 100%)',
+              }}
+            >
+              <div style={{ fontFamily: T.mono, fontSize: 10, color: T.accent, letterSpacing: '0.15em', marginBottom: 4 }}>SENIOR FULL-STACK ENGINEER</div>
+              <div style={{ fontFamily: T.sans, fontSize: 24, color: T.white, fontWeight: 500, letterSpacing: '-0.02em' }}>{personal.name}</div>
+            </div>
+          </div>
+
+          <div
+            style={{
+              padding: 18,
+              fontFamily: T.mono,
+              fontSize: 12,
+              lineHeight: 1.9,
+              color: T.mid,
+              borderBottom: `1px solid ${T.line}`,
+              display: 'grid',
+              gridTemplateColumns: '1fr 1fr',
+              gap: 12,
+            }}
+          >
+            <div>
+              <div><span style={{ color: T.dim }}>loc  ·</span> <span style={{ color: T.fg }}>Colombo, LK</span></div>
+              <div><span style={{ color: T.dim }}>tz   ·</span> <span style={{ color: T.fg }}>UTC+5:30</span></div>
+            </div>
+            <div>
+              <div><span style={{ color: T.dim }}>exp  ·</span> <span style={{ color: T.fg }}>6+ yrs</span></div>
+              <div><span style={{ color: T.dim }}>rate ·</span> <span style={{ color: T.fg }}>on request</span></div>
+            </div>
+          </div>
+
+          <div style={{ padding: 20, fontFamily: T.mono, fontSize: 11, color: T.mid, lineHeight: 2 }}>
+            <div style={{ color: T.dim, fontSize: 10, letterSpacing: '0.12em', marginBottom: 8 }}>// ENDORSEMENTS</div>
+            <div>✓ 30+ platform migrations</div>
+            <div>✓ 15+ ERP integrations (live sync)</div>
+            <div>✓ 10+ payment gateways</div>
+            <div>✓ AWS + Alibaba + Cloudflare</div>
+          </div>
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 900px) {
+          .about-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+          .principles-grid { grid-template-columns: 1fr !important; }
+          .stack-fluency { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
     </section>
   );
 };
