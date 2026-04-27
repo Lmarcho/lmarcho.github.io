@@ -13,7 +13,7 @@ export const portfolioData = {
     projectsShipped: "30+",
     current: "Building a multi-tenant AI SaaS — RAG chatbots, WhatsApp Cloud API integration, NestJS + Next.js on AWS.",
     available: "Open to senior / staff engagements — remote, Q3 onwards.",
-    profileImage: "/img/file.webp",
+    profileImage: "/img/output.avif",
   },
 
   links: {

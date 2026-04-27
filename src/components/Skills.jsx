@@ -76,7 +76,7 @@ const Stack = () => {
             >
               {layer.title}
             </div>
-            <div style={{ padding: '14px 20px', display: 'flex', gap: 6, flexWrap: 'wrap', alignItems: 'center' }}>
+            <div className="scroll-x-mobile" style={{ padding: '14px 20px', display: 'flex', gap: 6, flexWrap: 'wrap', alignItems: 'center' }}>
               {layer.items.map((item) => (
                 <span
                   key={item}
@@ -88,6 +88,7 @@ const Stack = () => {
                     padding: '4px 10px',
                     borderRadius: 3,
                     background: T.bg,
+                    whiteSpace: 'nowrap',
                   }}
                 >
                   {item}

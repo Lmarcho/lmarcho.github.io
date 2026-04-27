@@ -56,8 +56,8 @@ const Header = () => {
       >
         <div style={{ display: 'flex', gap: 12, alignItems: 'center', flexWrap: 'wrap' }}>
           <a href="#top" style={{ color: T.white, fontWeight: 600, textDecoration: 'none' }}>~/lmarcho</a>
-          <span style={{ color: T.dim }}>·</span>
-          <span style={{ display: 'inline-flex', alignItems: 'center' }}>
+          <span style={{ color: T.dim }} className="topbar-clock">·</span>
+          <span style={{ display: 'inline-flex', alignItems: 'center' }} className="topbar-clock">
             <Dot c={T.accent} /> available
           </span>
         </div>
@@ -72,7 +72,7 @@ const Header = () => {
         </nav>
 
         <div style={{ display: 'flex', gap: 12, justifyContent: 'flex-end', alignItems: 'center' }}>
-          <span>{t} <span style={{ color: T.dim }}>LKT</span></span>
+          <span className="topbar-clock">{t} <span style={{ color: T.dim }}>LKT</span></span>
           <button
             className="topbar-menu"
             onClick={() => setOpen((o) => !o)}
@@ -127,10 +127,11 @@ const Header = () => {
       )}
 
       <style>{`
-        @media (max-width: 768px) {
-          .topbar-row { grid-template-columns: 1fr auto !important; }
+        @media (max-width: 820px) {
+          .topbar-row { grid-template-columns: 1fr auto !important; padding: 10px 16px !important; }
           .topbar-nav { display: none !important; }
           .topbar-menu { display: inline-flex !important; }
+          .topbar-clock { display: none !important; }
         }
       `}</style>
     </header>

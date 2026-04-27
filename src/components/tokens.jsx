@@ -38,6 +38,7 @@ export function Kbd({ children }) {
 export function SectionHead({ num, title, meta, caption }) {
   return (
     <div
+      className="section-head"
       style={{
         display: 'grid',
         gridTemplateColumns: '120px 1fr auto',
@@ -50,7 +51,7 @@ export function SectionHead({ num, title, meta, caption }) {
     >
       <div style={{ fontFamily: T.mono, fontSize: 11, color: T.dim, letterSpacing: '0.12em' }}>/{num}</div>
       <div>
-        <h2 style={{ margin: 0, fontFamily: T.sans, fontWeight: 500, fontSize: 34, letterSpacing: '-0.02em', color: T.white }}>{title}</h2>
+        <h2 className="section-head-title" style={{ margin: 0, fontFamily: T.sans, fontWeight: 500, fontSize: 34, letterSpacing: '-0.02em', color: T.white }}>{title}</h2>
         {caption && (
           <div style={{ marginTop: 8, fontFamily: T.mono, fontSize: 12, color: T.mid, maxWidth: 640, lineHeight: 1.6 }}>{caption}</div>
         )}

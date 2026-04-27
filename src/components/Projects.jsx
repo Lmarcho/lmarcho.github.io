@@ -15,7 +15,7 @@ const Projects = () => {
         caption="Hover or tap a row — the panel on the left updates with the full context."
       />
 
-      <div className="work-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1.2fr', gap: 32 }}>
+      <div className="work-grid proj-desktop" style={{ display: 'grid', gridTemplateColumns: '1fr 1.2fr', gap: 32 }}>
         <div className="work-preview" style={{ position: 'sticky', top: 80, alignSelf: 'start' }}>
           <div style={{ border: `1px solid ${T.line}`, borderRadius: 6, overflow: 'hidden', background: T.bg2 }}>
             <div style={{ aspectRatio: '16 / 10', background: T.bg3, overflow: 'hidden', position: 'relative' }}>
@@ -170,12 +170,116 @@ const Projects = () => {
         </div>
       </div>
 
+      <div className="proj-mobile" style={{ display: 'none', flexDirection: 'column', gap: 18 }}>
+        {projects.map((p, i) => (
+          <article key={p.id} style={{ border: `1px solid ${T.line}`, borderRadius: 6, overflow: 'hidden', background: T.bg2 }}>
+            <div style={{ aspectRatio: '16/10', background: T.bg3, position: 'relative' }}>
+              <img src={p.image} alt={p.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <div
+                style={{
+                  position: 'absolute',
+                  top: 10,
+                  left: 10,
+                  fontFamily: T.mono,
+                  fontSize: 10,
+                  color: T.white,
+                  background: 'rgba(0,0,0,0.6)',
+                  padding: '3px 8px',
+                  borderRadius: 3,
+                  border: `1px solid ${T.line2}`,
+                  backdropFilter: 'blur(4px)',
+                  WebkitBackdropFilter: 'blur(4px)',
+                }}
+              >
+                {String(i + 1).padStart(2, '0')} · {p.year.split(' ')[0]}
+              </div>
+              {p.featured && (
+                <div
+                  style={{
+                    position: 'absolute',
+                    top: 10,
+                    right: 10,
+                    fontFamily: T.mono,
+                    fontSize: 9,
+                    color: T.accent,
+                    background: 'rgba(0,0,0,0.6)',
+                    padding: '3px 8px',
+                    borderRadius: 3,
+                    border: `1px solid ${T.accent}`,
+                    letterSpacing: '0.12em',
+                  }}
+                >
+                  FEAT
+                </div>
+              )}
+              {p.url && p.url !== '#' && (
+                <a
+                  href={p.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{
+                    position: 'absolute',
+                    bottom: 10,
+                    right: 10,
+                    fontFamily: T.mono,
+                    fontSize: 10,
+                    color: T.white,
+                    background: 'rgba(0,0,0,0.7)',
+                    padding: '5px 10px',
+                    borderRadius: 3,
+                    textDecoration: 'none',
+                    border: `1px solid ${T.line2}`,
+                  }}
+                >
+                  visit ↗
+                </a>
+              )}
+            </div>
+            <div style={{ padding: 16 }}>
+              <div style={{ fontFamily: T.mono, fontSize: 10, color: T.dim, letterSpacing: '0.12em', marginBottom: 6 }}>
+                {p.role.toUpperCase()} · {p.client.toUpperCase()}
+              </div>
+              <h3 style={{ margin: 0, fontFamily: T.sans, fontSize: 22, fontWeight: 500, color: T.white, letterSpacing: '-0.02em' }}>
+                {p.title}
+              </h3>
+              <p style={{ fontFamily: T.sans, fontSize: 13, color: T.mid, lineHeight: 1.6, marginTop: 10, marginBottom: 0 }}>
+                {p.description}
+              </p>
+              <div style={{ marginTop: 12, display: 'flex', gap: 6, flexWrap: 'wrap' }}>
+                {p.tech.map((t) => (
+                  <span key={t} style={{ fontFamily: T.mono, fontSize: 10, color: T.fg, border: `1px solid ${T.line2}`, padding: '2px 7px', borderRadius: 3 }}>
+                    {t}
+                  </span>
+                ))}
+              </div>
+              {p.metrics && (
+                <div
+                  style={{
+                    marginTop: 14,
+                    paddingTop: 12,
+                    borderTop: `1px solid ${T.line}`,
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(3, 1fr)',
+                    gap: 8,
+                  }}
+                >
+                  {p.metrics.map(([k, v]) => (
+                    <div key={k}>
+                      <div style={{ fontFamily: T.mono, fontSize: 9, color: T.dim, letterSpacing: '0.1em' }}>{k.toUpperCase()}</div>
+                      <div style={{ fontFamily: T.sans, fontSize: 14, color: T.accent, marginTop: 2 }}>{v}</div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          </article>
+        ))}
+      </div>
+
       <style>{`
-        @media (max-width: 960px) {
-          .work-grid { grid-template-columns: 1fr !important; }
-          .work-preview { position: static !important; }
-          .work-row { grid-template-columns: 24px 1fr 60px !important; }
-          .work-tech { display: none !important; }
+        @media (max-width: 900px) {
+          .proj-desktop { display: none !important; }
+          .proj-mobile { display: flex !important; }
         }
       `}</style>
     </section>

@@ -67,3 +67,45 @@ body::after {
   z-index: 0;
   background: radial-gradient(ellipse at center, transparent 40%, rgba(0, 0, 0, 0.5) 100%);
 }
+
+/* ==========================================================
+   MOBILE RESPONSIVE OVERRIDES
+   Cross-cutting rules sourced from the Mobile Preview design.
+   Component-local rules live next to each component.
+   ========================================================== */
+
+/* Tighten the main page gutters at narrow widths. */
+@media (max-width: 640px) {
+  body { font-size: 14px; }
+  .App > main,
+  .App > div {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
+
+/* Horizontally-scrollable chip rows on mobile — let chip strips
+   stay on a single row instead of stacking into tall columns. */
+.scroll-x-mobile { display: flex; }
+@media (max-width: 640px) {
+  .scroll-x-mobile {
+    overflow-x: auto;
+    flex-wrap: nowrap !important;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .scroll-x-mobile::-webkit-scrollbar { display: none; }
+  .scroll-x-mobile > * { flex-shrink: 0; }
+}
+
+/* Section header — collapse three-column row to a single column on
+   narrow screens. Section number stacks above the title. */
+@media (max-width: 720px) {
+  .section-head {
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+    padding: 20px 0 !important;
+    margin-top: 32px !important;
+  }
+  .section-head-title { font-size: 26px !important; }
+}

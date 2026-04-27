@@ -145,9 +145,9 @@ function NowCard() {
         <span>APR 2026</span>
       </div>
       <p style={{ margin: 0, fontFamily: T.sans, fontSize: 15, color: T.white, lineHeight: 1.55, fontWeight: 400 }}>{personal.current}</p>
-      <div style={{ marginTop: 16, display: 'flex', gap: 6, flexWrap: 'wrap' }}>
+      <div className="scroll-x-mobile" style={{ marginTop: 16, display: 'flex', gap: 6, flexWrap: 'wrap' }}>
         {['RAG · pgvector', 'NestJS', 'WhatsApp API', 'Next.js'].map((t) => (
-          <span key={t} style={{ fontFamily: T.mono, fontSize: 10, color: T.mid, border: `1px solid ${T.line2}`, padding: '3px 8px', borderRadius: 3 }}>
+          <span key={t} style={{ fontFamily: T.mono, fontSize: 10, color: T.mid, border: `1px solid ${T.line2}`, padding: '3px 8px', borderRadius: 3, whiteSpace: 'nowrap' }}>
             {t}
           </span>
         ))}
@@ -209,8 +209,9 @@ function SignalsCard() {
 const Hero = () => {
   const { personal } = portfolioData;
   return (
-    <section id="top" style={{ paddingTop: 40, paddingBottom: 60 }}>
+    <section id="top" className="hero-section" style={{ paddingTop: 40, paddingBottom: 60 }}>
       <div
+        className="hero-meta"
         style={{
           display: 'grid',
           gridTemplateColumns: '120px 1fr auto',
@@ -228,7 +229,7 @@ const Hero = () => {
         <div>{personal.location} · {personal.timezone}</div>
       </div>
 
-      <div style={{ paddingTop: 48, paddingBottom: 36 }}>
+      <div className="hero-headline" style={{ paddingTop: 48, paddingBottom: 36 }}>
         <div style={{ display: 'flex', gap: 16, alignItems: 'center', marginBottom: 20, fontFamily: T.mono, fontSize: 11, color: T.accent }}>
           <Dot c={T.accent} /> OPEN TO WORK · Q3 → Q4 · REMOTE / CONTRACT
         </div>
@@ -303,6 +304,13 @@ const Hero = () => {
         @media (max-width: 960px) {
           .hero-grid { grid-template-columns: 1fr !important; }
           .hero-lead { grid-template-columns: 1fr !important; gap: 24px !important; }
+        }
+        @media (max-width: 640px) {
+          .hero-section { padding-top: 24px !important; padding-bottom: 32px !important; }
+          .hero-meta { grid-template-columns: 1fr !important; gap: 4px !important; padding-bottom: 18px !important; }
+          .hero-headline { padding-top: 24px !important; padding-bottom: 24px !important; }
+          .hero-headline h1 { font-size: 56px !important; line-height: 0.95 !important; letter-spacing: -0.04em !important; }
+          .hero-lead p { font-size: 18px !important; line-height: 1.4 !important; }
         }
       `}</style>
     </section>
