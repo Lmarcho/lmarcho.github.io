@@ -6,7 +6,7 @@ const NAV = [
   ['stack', '02'],
   ['work', '03'],
   ['case', '04'],
-  ['cv', '05'],
+  ['experience', '05'],
   ['notes', '06'],
   ['contact', '07'],
 ];

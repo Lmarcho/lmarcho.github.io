@@ -209,7 +209,7 @@ function SignalsCard() {
 const Hero = () => {
   const { personal } = portfolioData;
   return (
-    <section id="top" className="hero-section" style={{ paddingTop: 40, paddingBottom: 60 }}>
+    <section id="top" className="hero-section" style={{ paddingTop: 40}}>
       <div
         className="hero-meta"
         style={{

@@ -4,7 +4,7 @@ import { portfolioData } from '../data/portfolioData';
 const Experience = () => {
   const { experience } = portfolioData;
   return (
-    <section id="cv">
+    <section id="experience">
       <SectionHead num="05" title="Experience" meta="2020 — present" caption="The résumé, in HTML." />
       {experience.map((e, i) => (
         <div
