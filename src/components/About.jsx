@@ -1,11 +1,11 @@
 import { T, SectionHead } from './tokens';
-import { portfolioData } from '../data/portfolioData';
+import { portfolioData, HIDE_AI_SAAS } from '../data/portfolioData';
 
 const PRINCIPLES = [
   ['Perf-first', 'Ship it fast, or fix it before shipping.'],
   ['Cache ≠ magic', 'Eviction strategy before you add a layer.'],
   ['Boring stacks', 'PHP + MySQL + Redis still beats fashion.'],
-  ['AI with grounding', 'RAG with citations beats vibes.'],
+  ...(HIDE_AI_SAAS ? [] : [['AI with grounding', 'RAG with citations beats vibes.']]),
   ['Observability first', "If you can't see it, you can't fix it."],
   ['Idempotent by default', "Retries shouldn't corrupt your data."],
   ['Measure, don\u2019t guess', 'Blackfire, New Relic, real users — not vibes.'],
@@ -42,10 +42,10 @@ const About = () => {
               fontWeight: 400,
             }}
           >
-            I build and run <strong style={{ color: T.white, fontWeight: 600 }}>platforms that don&rsquo;t fall over</strong> — from high-traffic Magento stores to multi-tenant AI SaaS. Six years in, most of it spent inside big PHP codebases and, lately, wiring LLMs into places they weren&rsquo;t designed for.
+            I build and run <strong style={{ color: T.white, fontWeight: 600 }}>platforms that don&rsquo;t fall over</strong> — from high-traffic Magento stores to {HIDE_AI_SAAS ? 'cloud-native NestJS and Next.js backends' : 'multi-tenant AI SaaS'}. Six years in, most of it spent inside big PHP codebases{HIDE_AI_SAAS ? '.' : ' and, lately, wiring LLMs into places they weren’t designed for.'}
           </p>
           <p style={{ fontFamily: T.sans, fontSize: 16, lineHeight: 1.65, color: T.mid, marginTop: 20 }}>
-            I like the unglamorous parts: query plans that don&rsquo;t explode, idempotent consumers, ERP sync that actually stays in sync, RAG retrieval that returns the right chunk, observability before incidents. I lead teams by pairing, reviewing, and making the easy thing the right thing.
+            I like the unglamorous parts: query plans that don&rsquo;t explode, idempotent consumers, ERP sync that actually stays in sync, {HIDE_AI_SAAS ? '' : 'RAG retrieval that returns the right chunk, '}observability before incidents. I lead teams by pairing, reviewing, and making the easy thing the right thing.
           </p>
 
           <div

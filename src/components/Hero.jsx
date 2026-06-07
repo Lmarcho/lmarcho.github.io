@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { T, Dot } from './tokens';
-import { portfolioData } from '../data/portfolioData';
+import { portfolioData, HIDE_AI_SAAS } from '../data/portfolioData';
 
 function Terminal() {
   const { personal } = portfolioData;
@@ -9,17 +9,19 @@ function Terminal() {
       { kind: 'cmd', text: 'whoami' },
       { kind: 'out', text: `${personal.name} — ${personal.role}` },
       { kind: 'cmd', text: 'cat /etc/focus' },
-      { kind: 'out', text: 'high-performance eCommerce · AI SaaS · cloud-native' },
+      { kind: 'out', text: HIDE_AI_SAAS ? 'high-performance eCommerce · cloud-native' : 'high-performance eCommerce · AI SaaS · cloud-native' },
       { kind: 'cmd', text: 'uptime' },
       { kind: 'out', text: `${personal.years}y shipping · ${personal.projectsShipped} platforms · 0 regrets about caching` },
       { kind: 'cmd', text: 'status --available' },
       { kind: 'out', text: personal.available, accent: true },
       { kind: 'cmd', text: 'ls --recent' },
-      { kind: 'out', text: '2025  ai-rag-saas/        multi-tenant · pgvector · WhatsApp' },
+      ...(HIDE_AI_SAAS ? [] : [{ kind: 'out', text: '2025  ai-rag-saas/        multi-tenant · pgvector · WhatsApp' }]),
       { kind: 'out', text: '2025  magento-mcp/        LLM → Magento admin via MCP' },
       { kind: 'out', text: '2024  airport-appliance/  Magento 2 · AWS · 48k SKU' },
       { kind: 'cmd', text: 'git log --oneline -3' },
-      { kind: 'out', text: 'a1f9c42  feat(rag): cite-aware retrieval, top-k re-rank' },
+      ...(HIDE_AI_SAAS
+        ? [{ kind: 'out', text: 'a1f9c42  feat(checkout): split shipping estimator, memoize rates' }]
+        : [{ kind: 'out', text: 'a1f9c42  feat(rag): cite-aware retrieval, top-k re-rank' }]),
       { kind: 'out', text: '8e2d301  perf(varnish): grace-mode on price ESI (-180ms p95)' },
       { kind: 'out', text: '5c7b0aa  fix(erp): idempotent stock writes, replay log' },
       { kind: 'prompt', text: "type 'help' — or scroll for more" },
@@ -146,7 +148,7 @@ function NowCard() {
       </div>
       <p style={{ margin: 0, fontFamily: T.sans, fontSize: 15, color: T.white, lineHeight: 1.55, fontWeight: 400 }}>{personal.current}</p>
       <div className="scroll-x-mobile" style={{ marginTop: 16, display: 'flex', gap: 6, flexWrap: 'wrap' }}>
-        {['RAG · pgvector', 'NestJS', 'WhatsApp API', 'Next.js'].map((t) => (
+        {(HIDE_AI_SAAS ? ['NestJS', 'Next.js', 'AWS', 'Redis'] : ['RAG · pgvector', 'NestJS', 'WhatsApp API', 'Next.js']).map((t) => (
           <span key={t} style={{ fontFamily: T.mono, fontSize: 10, color: T.mid, border: `1px solid ${T.line2}`, padding: '3px 8px', borderRadius: 3, whiteSpace: 'nowrap' }}>
             {t}
           </span>
@@ -271,7 +273,7 @@ const Hero = () => {
             Senior engineer building{' '}
             <span style={{ color: T.white, fontStyle: 'normal', fontFamily: T.sans, fontWeight: 500 }}>high-performance commerce</span>{' '}
             and{' '}
-            <span style={{ color: T.white, fontStyle: 'normal', fontFamily: T.sans, fontWeight: 500 }}>AI SaaS</span> — PHP, NestJS, pgvector and AWS — for systems that can&rsquo;t afford to be slow.
+            <span style={{ color: T.white, fontStyle: 'normal', fontFamily: T.sans, fontWeight: 500 }}>{HIDE_AI_SAAS ? 'cloud-native platforms' : 'AI SaaS'}</span> — PHP, NestJS{HIDE_AI_SAAS ? '' : ', pgvector'} and AWS — for systems that can&rsquo;t afford to be slow.
           </p>
           <div style={{ fontFamily: T.mono, fontSize: 11, color: T.dim, lineHeight: 1.8, borderLeft: `1px solid ${T.line2}`, paddingLeft: 18 }}>
             <div><span style={{ color: T.accent }}>●</span>&nbsp; {personal.years}+ years shipping commerce</div>

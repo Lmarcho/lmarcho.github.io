@@ -1,3 +1,7 @@
+// Temporary: hide the AI RAG SaaS platform (askrag.app) and related mentions.
+// Flip to `false` to restore all of it.
+export const HIDE_AI_SAAS = true;
+
 export const portfolioData = {
   personal: {
     name: "Lakshitha",
@@ -274,3 +278,34 @@ export const portfolioData = {
     stack: ["Magento 2", "PHP 8.2", "MySQL 8", "Redis 7", "Elasticsearch 8", "Varnish 7", "RabbitMQ", "AWS"],
   },
 };
+
+// --- Temporary hide of AI RAG SaaS platform details (see HIDE_AI_SAAS) ---
+if (HIDE_AI_SAAS) {
+  const d = portfolioData;
+
+  d.personal.specialty = "eCommerce · LEMP · Cloud-native";
+  d.personal.current =
+    "Leading backend platform work — NestJS + Next.js services on AWS, with a focus on performance, reliability and internal tooling.";
+
+  // Drop the "AI / RAG" capability layer.
+  d.stack = d.stack.filter((s) => s.title !== "AI / RAG");
+
+  // Drop the AI RAG SaaS project card.
+  d.projects = d.projects.filter((p) => p.id !== "rag-saas");
+
+  // Scrub RAG/SaaS specifics from the current role, keep the generic work.
+  const azbow = d.experience.find((e) => e.company === "Azbow PVT Ltd");
+  if (azbow) {
+    azbow.summary =
+      "Building cloud-native backend platforms on AWS — NestJS services, Next.js dashboards and internal automation tooling.";
+    azbow.highlights = [
+      "Backend on NestJS — modular architecture, RBAC, authentication, queue-based background processing",
+      "Next.js + Tailwind frontend for admin dashboards and end-user apps",
+      "AWS EC2 infra: deployment, scaling, monitoring; Redis caching + Cloudflare CDN for performance",
+      "Internal tools: report generation, PDF processing, automation workflows",
+    ];
+  }
+
+  // Drop the RAG writing piece.
+  d.writing = d.writing.filter((w) => !/\bRAG\b/i.test(w.title));
+}

@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { T, SectionHead } from './tokens';
-import { portfolioData } from '../data/portfolioData';
+import { portfolioData, HIDE_AI_SAAS } from '../data/portfolioData';
 
 const PRESETS = [
   { id: 'senior-role', label: 'Senior / staff role', subject: 'Senior / staff engagement' },
   { id: 'ecommerce', label: 'Magento / eCommerce', subject: 'Magento / eCommerce engagement' },
-  { id: 'ai-saas', label: 'AI / RAG build', subject: 'AI / RAG engagement' },
+  ...(HIDE_AI_SAAS ? [] : [{ id: 'ai-saas', label: 'AI / RAG build', subject: 'AI / RAG engagement' }]),
   { id: 'consulting', label: 'Short consulting', subject: 'Consulting engagement' },
 ];
 
